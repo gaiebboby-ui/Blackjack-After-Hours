@@ -1,0 +1,51 @@
+# Local archive: historical sources, references, builds and QA
+/_archive/
+
+# Dependencies and generated output
+node_modules/
+dist/
+public/game/
+.vite/
+coverage/
+artifacts/
+__pycache__/
+*.py[cod]
+assets/cards/atlases/
+assets/cards/blackjack-deck-atlas.*
+assets/cards/blackjack-deck-preview.png
+assets/cards/suit-atlases.json
+assets/dealer/v3/before-*/
+
+# Android local configuration and generated output
+android/.gradle/
+android/local.properties
+android/**/build/
+android/app/src/main/assets/
+*.jks
+*.keystore
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Optional art previews
+assets/dealer/v3/*-preview.gif
+assets/dealer/v3/*-reaction.gif
+assets/dealer/v3/contact-sheet.png
+
+# Generated card design previews
+assets/cards/templates/
+assets/cards/retro-style-preview.png
+assets/cards/retro-court-preview.png
+assets/cards/layer-assembly-preview.png
+assets/cards/court/court-portraits-preview.png
+
+# Reproducible layered editor exports (keep manual masters separately)
+assets/cards/editable/generated/
+assets/editable/generated/

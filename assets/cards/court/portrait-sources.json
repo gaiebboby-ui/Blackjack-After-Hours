@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-30",
+  "sourceChat": "01a18939-c395-7a20-b472-587e0340a53d",
+  "processing": "Exact copies of the prepared transparent portraits; composed by build_deck.py without redrawing.",
+  "assets": [
+    {
+      "id": "p-21",
+      "source": "_archive/assets/generated/work/prepared/p-21.png",
+      "file": "jack-p21.png",
+      "sha256": "ffaffd8f379cfd2c9db075053207120f49529e644c02114d37c4eba87dd1d733"
+    },
+    {
+      "id": "leo",
+      "source": "_archive/assets/generated/work/prepared/leo.png",
+      "file": "jack-zodiac-leo.png",
+      "sha256": "ef397a3fd1782ebd9f7da93e778b29c84eb9a1e5d34b92a260d72d5e0007443a"
+    },
+    {
+      "id": "rover",
+      "source": "_archive/assets/generated/work/prepared/rover.png",
+      "file": "jack-rover.png",
+      "sha256": "fbc5e83869e0f9629226b4cf1cc7e65e8399430780657d548e4ea70ecfb78f39"
+    },
+    {
+      "id": "lancer",
+      "source": "_archive/assets/generated/work/prepared/lancer.png",
+      "file": "jack-lancer.png",
+      "sha256": "e9004a7cb7a38fa8e88fb600ebe105fafbaf21a8c47ff23636907d59f7cee075"
+    },
+    {
+      "id": "glory",
+      "source": "_archive/assets/generated/work/prepared/glory.png",
+      "file": "queen-morning-glory.png",
+      "sha256": "cf15f6e4fa9bad561ca030dc4b496f6fdd82ef58a66328f3774b1bfc1f8bb8a9"
+    },
+    {
+      "id": "psycho-shy",
+      "source": "_archive/assets/generated/work/prepared/psycho-shy.png",
+      "file": "queen-psycho-shy.png",
+      "sha256": "337461c704e359966e9d8dd5f4172bc3d51f9bfc8a949073ec52ffd5e72d8455"
+    },
+    {
+      "id": "rampage",
+      "source": "_archive/assets/generated/work/prepared/rampage.png",
+      "file": "queen-rampage.png",
+      "sha256": "1f9a7a06f8e2dca9145e3bface5fbacda749268d7cd79e2d8e3f57bb23e52898"
+    },
+    {
+      "id": "blackjack",
+      "source": "_archive/assets/generated/work/prepared/blackjack.png",
+      "file": "queen-blackjack.png",
+      "sha256": "ec0fb65d3fa3623e8d06443aee2477a3f03e4dbe0d975afb0289ee78d42a111a"
+    },
+    {
+      "id": "goldenblood",
+      "source": "_archive/assets/generated/work/prepared/goldenblood.png",
+      "file": "king-goldenblood.png",
+      "sha256": "3c6168c3f919442114ab27483c33017d20f14c000c51f66bcc4322cb7e6592b2"
+    },
+    {
+      "id": "steel-rain",
+      "source": "_archive/assets/generated/work/prepared/steel-rain.png",
+      "file": "king-steel-rain.png",
+      "sha256": "8165edc29c209e86333ec0e191b6beb2b5b151ef3b697bc3d6f6b600335ef720"
+    },
+    {
+      "id": "deus",
+      "source": "_archive/assets/generated/work/prepared/deus.png",
+      "file": "king-deus.png",
+      "sha256": "9cdadef886385fd4699ade68a5574fbedd18dbb5bb0d9690f14e4f5e92ee1cf0"
+    },
+    {
+      "id": "light-hooves",
+      "source": "_archive/assets/generated/work/prepared/light-hooves.png",
+      "file": "king-light-hooves.png",
+      "sha256": "d695541d84e414302126adc5508f5ebe74193b9ba539a379bd5eee237138f5a4"
+    }
+  ]
+}

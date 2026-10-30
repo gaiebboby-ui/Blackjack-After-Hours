@@ -1,0 +1,114 @@
+{
+  "style": "Retro casino generated layers",
+  "sourceCount": 5,
+  "composition": [
+    "paper",
+    "number/ace/court decoration",
+    "pips or original portrait",
+    "frame",
+    "rank and suit index"
+  ],
+  "sources": [
+    {
+      "file": "01-paper.png",
+      "size": [
+        1061,
+        1483
+      ],
+      "mode": "RGB",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "sha256": "b97ba268d81d5594d53b4d925b4424900dfe253dd531093b275ba8f9c011ef16"
+    },
+    {
+      "file": "02-frame.png",
+      "size": [
+        1061,
+        1483
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "321ed9ec26127b2f3b452de08fbd8bfb215738978e2c0c54cc5d499009869911"
+    },
+    {
+      "file": "03-number-halo.png",
+      "size": [
+        1060,
+        1484
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "ddb7aaf923624757a31541fd86983032f707296dc0d1050ea06224e95acf0e35"
+    },
+    {
+      "file": "04-ace-halo.png",
+      "size": [
+        1061,
+        1482
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "37bda99536677354261dbcae0efdbdaa69e908f41c45070afc5eebe8a4833679"
+    },
+    {
+      "file": "05-court-medallion.png",
+      "size": [
+        1061,
+        1483
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "4ef80920edd7c40dfefdd433504d5bff1637cbb288b486f042a1c5ac74b6ce75"
+    }
+  ],
+  "placements": {
+    "number": {
+      "file": "03-number-halo.png",
+      "center": [
+        290,
+        399
+      ],
+      "maxSize": [
+        376,
+        472
+      ]
+    },
+    "ace": {
+      "file": "04-ace-halo.png",
+      "center": [
+        290,
+        397
+      ],
+      "maxSize": [
+        386,
+        514
+      ]
+    },
+    "court": {
+      "file": "05-court-medallion.png",
+      "center": [
+        296,
+        410
+      ],
+      "maxSize": [
+        368,
+        506
+      ]
+    }
+  },
+  "verification": "52 unique faces; exact pip counts; deterministic composition; no subject/index collisions; original portrait hashes preserved; runtime and dist match."
+}

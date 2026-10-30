@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+def appPackage = new groovy.json.JsonSlurper().parse(file('../../package.json'))
+android {
+    namespace 'com.afterhours.blackjack'
+    compileSdk 36
+    buildFeatures { buildConfig true }
+    defaultConfig {
+        applicationId 'com.afterhours.blackjack'
+        minSdk 26
+        targetSdk 36
+        versionCode 6
+        versionName appPackage.version
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    buildTypes { release { minifyEnabled false } }
+}
+tasks.register('syncGame', Sync) { from '../../dist'; into 'src/main/assets' }
+tasks.named('preBuild').configure { dependsOn 'syncGame' }
+dependencies {
+    implementation 'androidx.webkit:webkit:1.14.0'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}

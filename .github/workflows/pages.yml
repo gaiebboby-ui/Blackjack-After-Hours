@@ -1,0 +1,87 @@
+name: Deploy release to GitHub Pages
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing stable tag to deploy or restore, for example v1.2.2'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      (!github.event.repository.private || vars.ENABLE_PRIVATE_PAGES == 'true') &&
+      (github.event_name == 'workflow_dispatch' || (!github.event.release.prerelease && !github.event.release.draft))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out the exact release tag
+        uses: actions/checkout@v6
+        with:
+          ref: refs/tags/${{ github.event.release.tag_name || inputs.tag }}
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - run: npm ci
+      - run: npm test
+      - name: Record the checked-out commit
+        run: echo "APP_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Build the release
+        run: npm run build
+        env:
+          APP_RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Upload the website only
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Prevent an older automatic release from replacing Latest
+        id: eligible
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "release" ]; then
+            latest_tag="$(gh api "repos/$GITHUB_REPOSITORY/releases/latest" --jq .tag_name)"
+            if [ "$latest_tag" != "$RELEASE_TAG" ]; then
+              echo "Skipping release $RELEASE_TAG because Latest is $latest_tag"
+              echo "deploy=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          echo "deploy=true" >> "$GITHUB_OUTPUT"
+      - name: Deploy GitHub Pages
+        if: steps.eligible.outputs.deploy == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4

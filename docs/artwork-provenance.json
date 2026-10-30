@@ -1,0 +1,1572 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-30",
+  "scope": [
+    "assets",
+    "docs/media",
+    "public",
+    "android/app/src/main/res"
+  ],
+  "imageExtensions": [
+    ".avif",
+    ".bmp",
+    ".gif",
+    ".ico",
+    ".jpeg",
+    ".jpg",
+    ".png",
+    ".svg",
+    ".webp"
+  ],
+  "excludePrefixes": [
+    "public/game/"
+  ],
+  "userConfirmation": {
+    "date": "2026-10-30",
+    "scope": "All 12 current court portraits",
+    "text": "Да, все 12 созданы или сгенерированы мной"
+  },
+  "missingRuntimeImages": [],
+  "images": [
+    {
+      "file": "assets/app-icon-master.png",
+      "sha256": "406be2c28e2f25b5ea8a8caa01fe31b8db52f429938833f251ed3c37a5e824ca",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "Exact generated output: 01a1896c-0481-7650-8534-5206b9cdfd28/exec-933d85fe-42b9-46c1-8910-1bcf21ea035f.png; new Blackjack launcher icon requested by user."
+    },
+    {
+      "file": "assets/cards/atlases/clubs-atlas.png",
+      "sha256": "638ed95e8c5365d0a75d5d77ec4ab9daee5993f594a0be58bec992fe748f88af",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/atlases/diamonds-atlas.png",
+      "sha256": "4c5864384d75dcdb8d26d08cb4d3bd36e896c4bb9ada123385e45deda9585c06",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/atlases/hearts-atlas.png",
+      "sha256": "3b767901c171763dd4cef52fdd0413643c5f9e8ea35eae451333ee428a268ca3",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/atlases/spades-atlas.png",
+      "sha256": "a1fb7505484ed11965da4416b77199c75f4d058efbec2a2fd9b56590c568cda6",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/blackjack-deck-atlas.png",
+      "sha256": "91348abf4ccebfd69cf105758e38ac7e9523496a8b420df62d60ba17601f4f04",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/blackjack-deck-preview.png",
+      "sha256": "a0e8db759890237776a00b9be37649517748b35cc22968977b4211c2dfd8bd3a",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/card-back-master.png",
+      "sha256": "f5fda5c8c77487a6cfdc6afb1b8b628b37d6c2ed0c4fbbb68cd025d809430ee5",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "Archived generation manifest: 01a17b77-c146-70d1-aa0a-ce9532f381d2/exec-5891e1ce-0ae2-40d1-be3c-5280bdab930c.png"
+    },
+    {
+      "file": "assets/cards/card-back.png",
+      "sha256": "8bc64a89e98c56730afbd69fd937c1ce46fe048c76ee42757c7c1151ffa5a0a3",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/card-back-master.png"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/court/court-portraits-preview.png",
+      "sha256": "ac2eba217211774c6b1782f5505b4e39cf4870b902490dd09b27d7a047808647",
+      "optional": true,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/jack-lancer.png",
+      "sha256": "e9004a7cb7a38fa8e88fb600ebe105fafbaf21a8c47ff23636907d59f7cee075",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/jack-p21.png",
+      "sha256": "ffaffd8f379cfd2c9db075053207120f49529e644c02114d37c4eba87dd1d733",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/jack-rover.png",
+      "sha256": "fbc5e83869e0f9629226b4cf1cc7e65e8399430780657d548e4ea70ecfb78f39",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/jack-zodiac-leo.png",
+      "sha256": "ef397a3fd1782ebd9f7da93e778b29c84eb9a1e5d34b92a260d72d5e0007443a",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/king-deus.png",
+      "sha256": "9cdadef886385fd4699ade68a5574fbedd18dbb5bb0d9690f14e4f5e92ee1cf0",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/king-goldenblood.png",
+      "sha256": "3c6168c3f919442114ab27483c33017d20f14c000c51f66bcc4322cb7e6592b2",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/king-light-hooves.png",
+      "sha256": "d695541d84e414302126adc5508f5ebe74193b9ba539a379bd5eee237138f5a4",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/king-steel-rain.png",
+      "sha256": "8165edc29c209e86333ec0e191b6beb2b5b151ef3b697bc3d6f6b600335ef720",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/queen-blackjack.png",
+      "sha256": "ec0fb65d3fa3623e8d06443aee2477a3f03e4dbe0d975afb0289ee78d42a111a",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/queen-morning-glory.png",
+      "sha256": "cf15f6e4fa9bad561ca030dc4b496f6fdd82ef58a66328f3774b1bfc1f8bb8a9",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/queen-psycho-shy.png",
+      "sha256": "337461c704e359966e9d8dd5f4172bc3d51f9bfc8a949073ec52ffd5e72d8455",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/court/queen-rampage.png",
+      "sha256": "1f9a7a06f8e2dca9145e3bface5fbacda749268d7cd79e2d8e3f57bb23e52898",
+      "optional": false,
+      "kind": "user-confirmed",
+      "evidence": "User confirmed all 12 current portraits were created or generated by them in this chat on 2026-10-30."
+    },
+    {
+      "file": "assets/cards/faces/10_of_clubs.png",
+      "sha256": "5022d25a259a64fb638ef359cf9915369d57c3a02b3e245578df33b8c7bed7e8",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/10_of_diamonds.png",
+      "sha256": "d0ae6f3b25c8a16c7c1a2e9b021841fe8bf2a9b7876dbf8c97232ef38a07d040",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/10_of_hearts.png",
+      "sha256": "d9ce1b2bf04e07990ffb180e87dfbc4693b644a47cc2b8dec498583750c71a98",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/10_of_spades.png",
+      "sha256": "8a50887b83a70f98467d095c297da47ffe21ba1c365d1d46e9b3cf67a77b52dc",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/2_of_clubs.png",
+      "sha256": "fb7975ac80d15c274ba1f0837d35465634fb5a1057d00f0e16056f0c08858663",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/2_of_diamonds.png",
+      "sha256": "556f30d6eed54db19e26d40053110aff50b2558ff99a26cb75adc3797bb86deb",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/2_of_hearts.png",
+      "sha256": "8010a92d5a031ca570ae1c8b6de68d4388a9b0388086371f72439a0f62b78c2f",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/2_of_spades.png",
+      "sha256": "64600947cea6a6d99f7da23e226628716bbc93741d5af5467cd6d07c952f8a81",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/3_of_clubs.png",
+      "sha256": "f01aac1c6b7f69349b86830f7345f915e96ea41b84eb93dc9e6398ab964ab0a6",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/3_of_diamonds.png",
+      "sha256": "162993158ae420e1a311bae61c19e6906912abcb70b07248b619bc640a9fa6e0",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/3_of_hearts.png",
+      "sha256": "3fc28a1cb7c6c9a68e90ac5abfe39c263706a6aee07253a6aae86d3e17fa8643",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/3_of_spades.png",
+      "sha256": "6d5b630070ee16c1b2b99467ab4017973fa7d3fabc4198898fee2b8b2b8379fc",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/4_of_clubs.png",
+      "sha256": "1312c2c0fb9e100e9a34d60ebf21b39e16e04745b6704e12089770206466dac0",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/4_of_diamonds.png",
+      "sha256": "2f11d929adf42f2fd739d8d314537739356e819aff28f980efd7123670a00fcb",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/4_of_hearts.png",
+      "sha256": "c270c8bc4ce6abe5e6c204d06c5f25b95057c5183ce03145398f97fac4ac93e0",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/4_of_spades.png",
+      "sha256": "d966c64e7692e2e905f8cb65a6ed585da3ec5b539afab3bf7fafa872f6af5af7",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/5_of_clubs.png",
+      "sha256": "2a48d8eb0a423a10555e8d54a19772a7bad38037425b598f104031e39352fc80",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/5_of_diamonds.png",
+      "sha256": "de9a969fcad6b66a6c5fed7e838a6f92ac61544d9520cb83d1b00309571e27ed",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/5_of_hearts.png",
+      "sha256": "40e31654bbbc90a690df086a47b9e3428f7c34265ab31104a5ede0391484e576",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/5_of_spades.png",
+      "sha256": "46afeaad5b90c3c41c6eb970a4dbcf931e519af5c368ff9d5e5c1942d53e126d",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/6_of_clubs.png",
+      "sha256": "e8d88d4d7464615f45889741352b4120371401445f31b9acffed4ee0785fb06f",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/6_of_diamonds.png",
+      "sha256": "b5498616cf0520b4d1cd5c37a5e4ce329ce0be599ebf0c48f2c7bc4bda23a129",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/6_of_hearts.png",
+      "sha256": "4bffd89258ba0c1419e853b0ad8d6b8e729abbe4e87651932f489d757fc58807",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/6_of_spades.png",
+      "sha256": "d9f7488d99ff68db22abcec731f936d276bc62e4e22a765338d3e5860d2c45c0",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/7_of_clubs.png",
+      "sha256": "f65d001fd77afda24f79cad27c54b8a3fef69ddddcf7bb75f8b6c4051a92f32b",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/7_of_diamonds.png",
+      "sha256": "b2bfd016aed99882fa331dc9b5ce65ced34b98cd0690e7bb23197999b22af0fd",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/7_of_hearts.png",
+      "sha256": "2f08c60beff5e8f8ad40dfa605138f7e0d0b1f7dcd0fa792652216e17e8c1e3b",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/7_of_spades.png",
+      "sha256": "05f5de624f5e1b65ff2ee6001b07671aa025ca43ddc297b83c7706280a237875",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/8_of_clubs.png",
+      "sha256": "734d8c78d1a0bddc017b1a89216a61bad25370a5d139ddc1c8c890841ee81163",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/8_of_diamonds.png",
+      "sha256": "0dab53373a558b2371e15eb52499401e73423ba6772a0566588d28f7dcab49dd",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/8_of_hearts.png",
+      "sha256": "ce5d24d680c2b6782e19c73adce27aba276c070c55bd2887d74a9f3bd59d067b",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/8_of_spades.png",
+      "sha256": "72eaf187a45da55c90e2d264e4ce5d1cf04f43a368681081f3689a96e99acbaf",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/9_of_clubs.png",
+      "sha256": "d330e75fbc5126736985a60f8a22f0941f10c51edae3f956b680c2edb4c3f49b",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/9_of_diamonds.png",
+      "sha256": "c47ca048cf358395afbe1243f69f423dbaaa529858273df4f36b1469231b9d6a",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/9_of_hearts.png",
+      "sha256": "c8d6a9f52f3d73832d4747da72244da8080505f42e215534f334bbf8ecf17f3a",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/9_of_spades.png",
+      "sha256": "7a4a54029fe548ea4fad41fca4baa8cefb71ff0506c7f0987baa27f941da58a8",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/ace_of_clubs.png",
+      "sha256": "e32b7f82b7a41a5557ab868c1d7d0e6c0c477c6707bf1c5e14299f5fc977f1f7",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/ace_of_diamonds.png",
+      "sha256": "00660a1ec94018092618c3278f26afd4ae97352b057c6bd9840467cb4d43fcaa",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/ace_of_hearts.png",
+      "sha256": "ea0ad2e3afa4900d06efc7c4a28aeaa33a534f05265012cfbd8d4790bd569345",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/ace_of_spades.png",
+      "sha256": "319f18274dbbbab76677380052d5492f287fa0a7967de2d9957e1437a66f7578",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/faces/jack_of_clubs.png",
+      "sha256": "9f1e51837e672062860347a56b49450e3d62bb80e947b0f41c6511dcae3256a0",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/jack_of_clubs.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "f20a0a635f4ca320b9bc5dd648cdd393f63ca41bd9decc3c22a4e338314664b2"
+    },
+    {
+      "file": "assets/cards/faces/jack_of_diamonds.png",
+      "sha256": "e061afaeb00305bdab1d817a9328c5585a19b751801d5cdd83fbecda9ff00c18",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/jack_of_diamonds.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "e06c90724af3fe83fcdb5de5c634b1396d9bcd7e89e8545a202c6eeee3532dab"
+    },
+    {
+      "file": "assets/cards/faces/jack_of_hearts.png",
+      "sha256": "b3d10127e385b216f39048ffec2d410a63eaf85b1dff3a1104589ea5e7429a78",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/jack_of_hearts.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "16a328d35c854007f2e2e4477907c84ae5c1af25d2fff3e565e74d3e4628568b"
+    },
+    {
+      "file": "assets/cards/faces/jack_of_spades.png",
+      "sha256": "6398879da8a2adc589eff1352076ce5c3041e0c7448930d460011f6145029ef4",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/jack_of_spades.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "cdfc24032b59642c4888623d5217039f3f76c20beb1ae1e4fbcbce2c1858bee1"
+    },
+    {
+      "file": "assets/cards/faces/king_of_clubs.png",
+      "sha256": "c2e2afb1984f765b485ca1cc14f375f4d50e8801b9b936233e953414d22d2cce",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/king_of_clubs.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "929a489d45921635290a9df714b8ddc8133f29432d16126317c53e5767fa3ac3"
+    },
+    {
+      "file": "assets/cards/faces/king_of_diamonds.png",
+      "sha256": "d6f987201e83f21e684c6ea902e2f2c7fae6a22a31b85cf7f1db15f31e4bce00",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/king_of_diamonds.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "333a7b36a4800715256b0b103ef0174a04eb72bc14db5843bd40590cbfbda244"
+    },
+    {
+      "file": "assets/cards/faces/king_of_hearts.png",
+      "sha256": "e731abc2164157263fec922890ac260bce01381b8ad7cab53c842a2439e2d48f",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/king_of_hearts.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "b52e2e4671cc69594e77b9f93a3487adbb1b7b1f425c90ac02d95479c8714c33"
+    },
+    {
+      "file": "assets/cards/faces/king_of_spades.png",
+      "sha256": "e4afab592fe9435ff5387334edd6a25a0ec12ab8871c8d1847e062dea7d28e0c",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/king_of_spades.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "3a2cb92341f0e9e3fa7be0c76dce6ae2bb837c2d16d4993d011b2b28ba37daa6"
+    },
+    {
+      "file": "assets/cards/faces/queen_of_clubs.png",
+      "sha256": "968df7bbaee0addaace92d62a56e707afd7e39fd9f6b2d51a87e95dbe03eb2c4",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/queen_of_clubs.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "37324d665e54badaa3bd1747c739fb55e49ac95552c1ba97888ec5d1581fd910"
+    },
+    {
+      "file": "assets/cards/faces/queen_of_diamonds.png",
+      "sha256": "04acf0ad28841d564401cfc521879029016c87103f746fbc7694f41e7bb6fd6c",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/queen_of_diamonds.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "d8009b59b2ad8274260ebbe639e0d0e8e04e568729a1f1dab1d06db56645b895"
+    },
+    {
+      "file": "assets/cards/faces/queen_of_hearts.png",
+      "sha256": "84fc676b91b064759c5f82a9ee6e3c04225d0d65d6f074cf2282cf5c14b4b1e7",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/queen_of_hearts.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "7dbe5c88499db0f999f7ebcdc57f69be239ac589b9ca5df569423a62b25b3cf2"
+    },
+    {
+      "file": "assets/cards/faces/queen_of_spades.png",
+      "sha256": "66aac2e2f92b631d06b8653a17347e1a9184c3bebac4c96646f7bf2b63de90ab",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/editable/manual/queen_of_spades.psd",
+        "assets/cards/build_deck.py"
+      ],
+      "evidence": "Exported from the merged image saved in the user-edited PSD master, as requested on 2026-10-30. Original layered PSD preserved in editable/manual.",
+      "sourceSha256": "075100e12fab20a7cb1bbe157ee0f637894bd4027d7ec68e9a2e13682a349b07"
+    },
+    {
+      "file": "assets/cards/layer-assembly-preview.png",
+      "sha256": "750b6b0667b82235f27afde2621451683acde896f53566946a2689698f01ccb5",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/layers/01-paper.png",
+      "sha256": "b97ba268d81d5594d53b4d925b4424900dfe253dd531093b275ba8f9c011ef16",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "assets/cards/layers/manifest.json and generation-prompts.json; five generated card components."
+    },
+    {
+      "file": "assets/cards/layers/02-frame.png",
+      "sha256": "321ed9ec26127b2f3b452de08fbd8bfb215738978e2c0c54cc5d499009869911",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "assets/cards/layers/manifest.json and generation-prompts.json; five generated card components."
+    },
+    {
+      "file": "assets/cards/layers/03-number-halo.png",
+      "sha256": "ddb7aaf923624757a31541fd86983032f707296dc0d1050ea06224e95acf0e35",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "assets/cards/layers/manifest.json and generation-prompts.json; five generated card components."
+    },
+    {
+      "file": "assets/cards/layers/04-ace-halo.png",
+      "sha256": "37bda99536677354261dbcae0efdbdaa69e908f41c45070afc5eebe8a4833679",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "assets/cards/layers/manifest.json and generation-prompts.json; five generated card components."
+    },
+    {
+      "file": "assets/cards/layers/05-court-medallion.png",
+      "sha256": "4ef80920edd7c40dfefdd433504d5bff1637cbb288b486f042a1c5ac74b6ce75",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "assets/cards/layers/manifest.json and generation-prompts.json; five generated card components."
+    },
+    {
+      "file": "assets/cards/retro-court-preview.png",
+      "sha256": "cc4c5d6139ab163d799974799e50b662e15d467332a56b6cf64ecf9411ff7459",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/retro-style-preview.png",
+      "sha256": "22a9cfa490702400ce72dd039f9b973131a123d49610340f9677b0fce6af14a1",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Regenerated deck preview or atlas from current face PNGs including the 12 user-edited PSD court cards, 2026-10-30."
+    },
+    {
+      "file": "assets/cards/templates/retro-ace.png",
+      "sha256": "23f33e32f6c9c5481c9701ec224893637fc496460e17dade140113b5036f3c8d",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/templates/retro-court.png",
+      "sha256": "decec18588e4c9d22f2c883149a141a54f047efbc18e076a85e665fa597639d9",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/cards/templates/retro-number.png",
+      "sha256": "e97d7d47f498934602f87f8e01b068cc08b0b3377e0eba36c05a50312cbb7229",
+      "optional": true,
+      "kind": "derived",
+      "parents": [
+        "assets/cards/layers/manifest.json",
+        "assets/cards/court/portrait-sources.json",
+        "assets/cards/build_deck.py",
+        "assets/cards/retro_style.py"
+      ],
+      "evidence": "Current deterministic card export from approved components and user-confirmed portraits."
+    },
+    {
+      "file": "assets/dealer/dealer-animation-rows — копия.png",
+      "sha256": "82be94d427e1792ae52e1e2bd4d8a635de0ac67aa18c72a1fe425705d8183a24",
+      "optional": false,
+      "kind": "user-edited-project-generation",
+      "evidence": "Project-generated animation atlas; user supplied this updated design and requested rebuilding in chat 01a1893d-4859-7913-9bd6-20c7e430d49d."
+    },
+    {
+      "file": "assets/dealer/v3/face-0.png",
+      "sha256": "27fc10785ef34fc31f22d9ec1657589ffce8af7f01e7a7913a0d963048656dce",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-1.png",
+      "sha256": "f1f4761a33839ca85f7e87b52b5b7523d9a8d8aff1140466b9a078037a21d7d5",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-10.png",
+      "sha256": "8c38362ac31aa3d58ba9250939628e42817c7bdb2254a4dbb81908571d9cc71c",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-11.png",
+      "sha256": "9e8ea1bdb839ba60c81fc572ccf2f8c66feae636e304d66105694d8cce6428ed",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-12.png",
+      "sha256": "1cc4d2f546b0f421983814af9640d4ebf527548cb7958a23bad9fed39bea9382",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-13.png",
+      "sha256": "8365d855969df21b954fe4f6621b61aa2b2c001842c35674958fe790fde6452d",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-14.png",
+      "sha256": "f9e2e2f2834782c3e381df42131f539211a820f35c170135c3e52ecfcd8cd2f9",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-15.png",
+      "sha256": "a2c2cf0844ff8f7939cf2f04422cbacda6841cb82ad28062ab1c445ee7c4fcc6",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-2.png",
+      "sha256": "f363c895ddbec959c03cc0e6c4f9fc3ef54a012b4f6817328f62f814302375ad",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-3.png",
+      "sha256": "7c50e251e2f67178dcb00f8155595e0b0b289d0c2dede11a323559c27ae1bd5b",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-4.png",
+      "sha256": "1f8245ecb4e936968d09680b772ae632f32adc84d3570fde2a521fd784ff6891",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-5.png",
+      "sha256": "2bf670de82b5368aa4f0a2728b165398211fc11be22156903f8c90925fafd18e",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-6.png",
+      "sha256": "d4e400027b3dfa35b068b1e8d35ad21ee68fde2a93f67fe4cd86f8639f122583",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-7.png",
+      "sha256": "d43ab2808548813a5ad2b5708ee676e6fa5b55fe1a1d55611e3eab5793a38540",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-8.png",
+      "sha256": "65fb5bd6ef7a4ed1e42b6f4479cc04f1b5d51a28ff59ac691b3a4e4266d4892f",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/face-9.png",
+      "sha256": "36257a2f327cc38752ad9fa78dead2ea435606730eb5dc0670e069289ce2ba37",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-0.png",
+      "sha256": "a084a85f875bc472ced9d6ae6b31583e6ee7bd2a15878f84560b8843a3a493ec",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-1.png",
+      "sha256": "3a1abd6f72e8b6edf31c06060a8b719b1f851fe82d8d318db7c00efe29ca9c49",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-10.png",
+      "sha256": "e17e31caef39ca5ac5385ee63d6675f6dec72c8ada584464a49ad5491f46bc8c",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-11.png",
+      "sha256": "d677c2b815cd6d11c074f54c6a08f138115c56514533736de594627a4049ca34",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-12.png",
+      "sha256": "34bcca5d5b61fc77732172a6d07d898a42e2cfaf01cae8999d7772b68c7398e3",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-13.png",
+      "sha256": "4e4d5360bb366f475c037cdba631005ec16eeec11e94df62d163e1f127869f6d",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-14.png",
+      "sha256": "94c76209a49809384fee9e40881d7d33049f3ada82a0eb9d81d6eeef23f2bfcc",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-15.png",
+      "sha256": "c1e1545d9541787962a880182ba68ac71bc3fb15703db7605f844d044748869d",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-2.png",
+      "sha256": "6efb5ec5eb396310ef5a3338e238c8fa20f068b76fd2666c27939e7a25ab89f8",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-3.png",
+      "sha256": "3dd2d5ac52001b74dd5f68c70e4301368fb0e22a0dc9d0fd13a3b0492349333f",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-4.png",
+      "sha256": "59d0048d142c33a1a2c374c6e29159ec93e87b73ed8108236ad41bdfe2f6931f",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-5.png",
+      "sha256": "e0295fcb55687a4eea8d132233df6e6097aa15585d41b8d920ed2a1e642d2a8d",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-6.png",
+      "sha256": "26b94ec74574e19afb90af67c121ca846d87beffef6b8fa2ba0c9df009b59456",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-7.png",
+      "sha256": "afeb4bdb602cd8283eca6f14326437955dd34867abbb590e28f91522449f6035",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-8.png",
+      "sha256": "53324c44774d1fb8b02bf04578f2a2595537f87cbbce19e18255cd47d0a5849e",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/frame-9.png",
+      "sha256": "f45615f84b831b7820fa9dfab3fd35bd7cb19a149de365c4fd1496a3b0162595",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/dealer/dealer-animation-rows — копия.png",
+        "assets/dealer/v3/smirk-generated-source.png"
+      ],
+      "evidence": "rebuild-from-redesign.py and integrate-smirk.py; current frame/face exports."
+    },
+    {
+      "file": "assets/dealer/v3/smirk-generated-source.png",
+      "sha256": "a02444c330fe2cfd46b980b8282845b923f344668d9d18eea6509319b75d2d6f",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "Exact SHA-256 match to generated output 01a18840-4e3f-7431-9be8-31dd3bca9a9e/exec-aec7f044-4a1b-4174-8a4c-dc51846f94bc.png"
+    },
+    {
+      "file": "assets/scene/blackjack-table-runtime.webp",
+      "sha256": "77caed18d8d47943da9923983c736228720c47b988b9bcd1b8a3b3ff866743e8",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/scene/blackjack-table.png"
+      ],
+      "evidence": "Runtime WebP export of the project-generated table."
+    },
+    {
+      "file": "assets/scene/blackjack-table.png",
+      "sha256": "fa1bf0661b312657eef95286503155c9b1d0c2a838340eac36e2315bd00bfb03",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "Archived generation manifest: 01a17b77-c146-70d1-aa0a-ce9532f381d2/exec-6d8ae500-e4de-40c2-94d1-248546b1feb2.png"
+    },
+    {
+      "file": "assets/sprites/bet-token-runtime.png",
+      "sha256": "7522b808ae32a7ba4e1c10be2de37f797c62e382c74ee276f80dec8d0660ddc9",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/sprites/bet-token.png"
+      ],
+      "evidence": "Runtime PNG export of the project-generated chip."
+    },
+    {
+      "file": "assets/sprites/bet-token.png",
+      "sha256": "ed7e46941ff5d621e86bd836b09f161bac01a029225b3bee6b2d3171f417db3c",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "Archived generation manifest: 01a17b77-c146-70d1-aa0a-ce9532f381d2/exec-5e4ab730-da1f-4fea-ab66-fb24d58629ac.png"
+    },
+    {
+      "file": "docs/media/gameplay.png",
+      "sha256": "c9316c39be92c2dc304cb2ecadf5f80a62932331822612385e6ae77c90537350",
+      "optional": false,
+      "kind": "project-screenshot",
+      "evidence": "Screenshot captured from the locally built game during publication preparation; contains approved game assets and project-drawn UI."
+    },
+    {
+      "file": "docs/media/readme-banner.png",
+      "sha256": "0c04a43b95fe6034f506bbebd592cf5279ea17b1214982340d0fedeae19be4e3",
+      "optional": false,
+      "kind": "project-generated",
+      "evidence": "Exact generated output: 01a18d53-bb05-7ea3-bec0-90db8f393ed6/exec-ad8d2582-35e7-4e26-8e66-44b698d0c302.png; user selected the ink/noir variant on 2026-10-30."
+    },
+    {
+      "file": "public/favicon.ico",
+      "sha256": "1b7c5ddf06dfa8f45676d2278e356a811073574adc1a9624780aa1b486eb67ad",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "public/icon-180.png",
+      "sha256": "fafdd0ee2b0de62beabb7da1b332afb727d5d301576838bc03c12c4902766e57",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "public/icon-192.png",
+      "sha256": "bec0aa97f6f90cb9ffcbd54a25bf9b6bdc97310e2178b6d0157df71f6c681f68",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "public/icon-32.png",
+      "sha256": "cbcd7c8852ff40c243ec7b682a2fab8f49b32978b9bb7674bdf52c1e64d18218",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "public/icon-512.png",
+      "sha256": "c1d2d78c1c23a1ba9fc1c4165abbfe995ead55c547e1e47b1f88db09651318f8",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "android/app/src/main/res/drawable-nodpi/ic_launcher_foreground.png",
+      "sha256": "6799cd2095c0d721dd128ec05e0c8f3455b12d4cf858d60b7a6f51731dfdb340",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "sha256": "23c229aa50a6d73ad676dd3386f2b6f78c878016a119a24db232249f775e0d9b",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "sha256": "7c8e1dd2cf4d881ad398c5e7f3b3ba3b913d17cbdd43f65a45cad62098aea3d2",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "sha256": "82a9a7c02909b719e63a01d37753a99488a7ac5034ea34ac7b55b2b0c0f7de08",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": "42985b089285af13e43fa95baacd8d69852dd07842f047dea1f96a05d49f99f5",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": "bec0aa97f6f90cb9ffcbd54a25bf9b6bdc97310e2178b6d0157df71f6c681f68",
+      "optional": false,
+      "kind": "derived",
+      "parents": [
+        "assets/app-icon-master.png"
+      ],
+      "evidence": "Browser or Android icon export of the new project-generated Blackjack master for version 1.3.0."
+    },
+    {
+      "file": "assets/title-screen-master.png",
+      "optional": false,
+      "sha256": "0c04a43b95fe6034f506bbebd592cf5279ea17b1214982340d0fedeae19be4e3",
+      "kind": "project-generated",
+      "evidence": "Exact generated output: 01a18d53-bb05-7ea3-bec0-90db8f393ed6/exec-ad8d2582-35e7-4e26-8e66-44b698d0c302.png; user selected the ink/noir variant on 2026-10-30."
+    },
+    {
+      "file": "public/title-screen.webp",
+      "optional": false,
+      "sha256": "0f4e58c9435fcd5c0e7b1aa327dadbf51626f1b4b6a7940f8006a981654ccbbe",
+      "kind": "derived",
+      "parents": [
+        "assets/title-screen-master.png"
+      ],
+      "evidence": "WebP export of user-selected ink/noir artwork from assets/title-screen-master.png."
+    },
+    {
+      "file": "docs/media/start-screen.png",
+      "sha256": "64985391dde7aecfaa2ed219cf4fa07ee2b80fa0cbb9b490ea612bc6af0bf0e6",
+      "optional": false,
+      "kind": "derived",
+      "evidence": "Local browser screenshot at 390 x 844 of the responsive ink/noir title screen, captured 2026-10-30.",
+      "parents": [
+        "assets/title-screen-mobile-master.png",
+        "src/main.ts",
+        "src/style.css"
+      ]
+    },
+    {
+      "file": "assets/title-screen-mobile-master.png",
+      "optional": false,
+      "sha256": "c87a3807a591153768da45aa6730e4f8b77bf9b9045ecc281040e79ea2a21e92",
+      "kind": "project-generated",
+      "evidence": "Exact generated output: 01a18d53-bb05-7ea3-bec0-90db8f393ed6/exec-6ef6957c-87f9-47c9-8acd-3eeabadc9dc9.png. User requested mobile ink/noir composition emphasizing table, cards and Blackjack."
+    },
+    {
+      "file": "public/title-screen-mobile.webp",
+      "optional": false,
+      "sha256": "1e6000850e1ca0460edf0f35b731a8e9a6b158fb56d8fa59e4cbb0c6d4556b51",
+      "kind": "derived",
+      "evidence": "WebP export of the mobile ink/noir master.",
+      "parents": [
+        "assets/title-screen-mobile-master.png"
+      ]
+    }
+  ]
+}

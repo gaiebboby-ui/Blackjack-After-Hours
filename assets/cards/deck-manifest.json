@@ -1,0 +1,432 @@
+{
+  "name": "BlackJack retro casino deck",
+  "cardSize": {
+    "width": 512,
+    "height": 716
+  },
+  "suits": [
+    "hearts",
+    "diamonds",
+    "clubs",
+    "spades"
+  ],
+  "ranks": [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ],
+  "count": 52,
+  "back": "card-back.png",
+  "cards": [
+    {
+      "rank": "A",
+      "value": 1,
+      "suit": "hearts",
+      "file": "faces/ace_of_hearts.png",
+      "frame": "ace_of_hearts.png"
+    },
+    {
+      "rank": "2",
+      "value": 2,
+      "suit": "hearts",
+      "file": "faces/2_of_hearts.png",
+      "frame": "2_of_hearts.png"
+    },
+    {
+      "rank": "3",
+      "value": 3,
+      "suit": "hearts",
+      "file": "faces/3_of_hearts.png",
+      "frame": "3_of_hearts.png"
+    },
+    {
+      "rank": "4",
+      "value": 4,
+      "suit": "hearts",
+      "file": "faces/4_of_hearts.png",
+      "frame": "4_of_hearts.png"
+    },
+    {
+      "rank": "5",
+      "value": 5,
+      "suit": "hearts",
+      "file": "faces/5_of_hearts.png",
+      "frame": "5_of_hearts.png"
+    },
+    {
+      "rank": "6",
+      "value": 6,
+      "suit": "hearts",
+      "file": "faces/6_of_hearts.png",
+      "frame": "6_of_hearts.png"
+    },
+    {
+      "rank": "7",
+      "value": 7,
+      "suit": "hearts",
+      "file": "faces/7_of_hearts.png",
+      "frame": "7_of_hearts.png"
+    },
+    {
+      "rank": "8",
+      "value": 8,
+      "suit": "hearts",
+      "file": "faces/8_of_hearts.png",
+      "frame": "8_of_hearts.png"
+    },
+    {
+      "rank": "9",
+      "value": 9,
+      "suit": "hearts",
+      "file": "faces/9_of_hearts.png",
+      "frame": "9_of_hearts.png"
+    },
+    {
+      "rank": "10",
+      "value": 10,
+      "suit": "hearts",
+      "file": "faces/10_of_hearts.png",
+      "frame": "10_of_hearts.png"
+    },
+    {
+      "rank": "J",
+      "value": 10,
+      "suit": "hearts",
+      "file": "faces/jack_of_hearts.png",
+      "frame": "jack_of_hearts.png",
+      "character": "P-21",
+      "portrait": "court/jack-p21.png",
+      "editableSource": "editable/manual/jack_of_hearts.psd"
+    },
+    {
+      "rank": "Q",
+      "value": 10,
+      "suit": "hearts",
+      "file": "faces/queen_of_hearts.png",
+      "frame": "queen_of_hearts.png",
+      "character": "Morning Glory",
+      "portrait": "court/queen-morning-glory.png",
+      "editableSource": "editable/manual/queen_of_hearts.psd"
+    },
+    {
+      "rank": "K",
+      "value": 10,
+      "suit": "hearts",
+      "file": "faces/king_of_hearts.png",
+      "frame": "king_of_hearts.png",
+      "character": "Goldenblood",
+      "portrait": "court/king-goldenblood.png",
+      "editableSource": "editable/manual/king_of_hearts.psd"
+    },
+    {
+      "rank": "A",
+      "value": 1,
+      "suit": "diamonds",
+      "file": "faces/ace_of_diamonds.png",
+      "frame": "ace_of_diamonds.png"
+    },
+    {
+      "rank": "2",
+      "value": 2,
+      "suit": "diamonds",
+      "file": "faces/2_of_diamonds.png",
+      "frame": "2_of_diamonds.png"
+    },
+    {
+      "rank": "3",
+      "value": 3,
+      "suit": "diamonds",
+      "file": "faces/3_of_diamonds.png",
+      "frame": "3_of_diamonds.png"
+    },
+    {
+      "rank": "4",
+      "value": 4,
+      "suit": "diamonds",
+      "file": "faces/4_of_diamonds.png",
+      "frame": "4_of_diamonds.png"
+    },
+    {
+      "rank": "5",
+      "value": 5,
+      "suit": "diamonds",
+      "file": "faces/5_of_diamonds.png",
+      "frame": "5_of_diamonds.png"
+    },
+    {
+      "rank": "6",
+      "value": 6,
+      "suit": "diamonds",
+      "file": "faces/6_of_diamonds.png",
+      "frame": "6_of_diamonds.png"
+    },
+    {
+      "rank": "7",
+      "value": 7,
+      "suit": "diamonds",
+      "file": "faces/7_of_diamonds.png",
+      "frame": "7_of_diamonds.png"
+    },
+    {
+      "rank": "8",
+      "value": 8,
+      "suit": "diamonds",
+      "file": "faces/8_of_diamonds.png",
+      "frame": "8_of_diamonds.png"
+    },
+    {
+      "rank": "9",
+      "value": 9,
+      "suit": "diamonds",
+      "file": "faces/9_of_diamonds.png",
+      "frame": "9_of_diamonds.png"
+    },
+    {
+      "rank": "10",
+      "value": 10,
+      "suit": "diamonds",
+      "file": "faces/10_of_diamonds.png",
+      "frame": "10_of_diamonds.png"
+    },
+    {
+      "rank": "J",
+      "value": 10,
+      "suit": "diamonds",
+      "file": "faces/jack_of_diamonds.png",
+      "frame": "jack_of_diamonds.png",
+      "character": "Zodiac Leo",
+      "portrait": "court/jack-zodiac-leo.png",
+      "editableSource": "editable/manual/jack_of_diamonds.psd"
+    },
+    {
+      "rank": "Q",
+      "value": 10,
+      "suit": "diamonds",
+      "file": "faces/queen_of_diamonds.png",
+      "frame": "queen_of_diamonds.png",
+      "character": "Psycho-Shy",
+      "portrait": "court/queen-psycho-shy.png",
+      "editableSource": "editable/manual/queen_of_diamonds.psd"
+    },
+    {
+      "rank": "K",
+      "value": 10,
+      "suit": "diamonds",
+      "file": "faces/king_of_diamonds.png",
+      "frame": "king_of_diamonds.png",
+      "character": "Steel Rain",
+      "portrait": "court/king-steel-rain.png",
+      "editableSource": "editable/manual/king_of_diamonds.psd"
+    },
+    {
+      "rank": "A",
+      "value": 1,
+      "suit": "clubs",
+      "file": "faces/ace_of_clubs.png",
+      "frame": "ace_of_clubs.png"
+    },
+    {
+      "rank": "2",
+      "value": 2,
+      "suit": "clubs",
+      "file": "faces/2_of_clubs.png",
+      "frame": "2_of_clubs.png"
+    },
+    {
+      "rank": "3",
+      "value": 3,
+      "suit": "clubs",
+      "file": "faces/3_of_clubs.png",
+      "frame": "3_of_clubs.png"
+    },
+    {
+      "rank": "4",
+      "value": 4,
+      "suit": "clubs",
+      "file": "faces/4_of_clubs.png",
+      "frame": "4_of_clubs.png"
+    },
+    {
+      "rank": "5",
+      "value": 5,
+      "suit": "clubs",
+      "file": "faces/5_of_clubs.png",
+      "frame": "5_of_clubs.png"
+    },
+    {
+      "rank": "6",
+      "value": 6,
+      "suit": "clubs",
+      "file": "faces/6_of_clubs.png",
+      "frame": "6_of_clubs.png"
+    },
+    {
+      "rank": "7",
+      "value": 7,
+      "suit": "clubs",
+      "file": "faces/7_of_clubs.png",
+      "frame": "7_of_clubs.png"
+    },
+    {
+      "rank": "8",
+      "value": 8,
+      "suit": "clubs",
+      "file": "faces/8_of_clubs.png",
+      "frame": "8_of_clubs.png"
+    },
+    {
+      "rank": "9",
+      "value": 9,
+      "suit": "clubs",
+      "file": "faces/9_of_clubs.png",
+      "frame": "9_of_clubs.png"
+    },
+    {
+      "rank": "10",
+      "value": 10,
+      "suit": "clubs",
+      "file": "faces/10_of_clubs.png",
+      "frame": "10_of_clubs.png"
+    },
+    {
+      "rank": "J",
+      "value": 10,
+      "suit": "clubs",
+      "file": "faces/jack_of_clubs.png",
+      "frame": "jack_of_clubs.png",
+      "character": "Rover",
+      "portrait": "court/jack-rover.png",
+      "editableSource": "editable/manual/jack_of_clubs.psd"
+    },
+    {
+      "rank": "Q",
+      "value": 10,
+      "suit": "clubs",
+      "file": "faces/queen_of_clubs.png",
+      "frame": "queen_of_clubs.png",
+      "character": "Rampage",
+      "portrait": "court/queen-rampage.png",
+      "editableSource": "editable/manual/queen_of_clubs.psd"
+    },
+    {
+      "rank": "K",
+      "value": 10,
+      "suit": "clubs",
+      "file": "faces/king_of_clubs.png",
+      "frame": "king_of_clubs.png",
+      "character": "Deus",
+      "portrait": "court/king-deus.png",
+      "editableSource": "editable/manual/king_of_clubs.psd"
+    },
+    {
+      "rank": "A",
+      "value": 1,
+      "suit": "spades",
+      "file": "faces/ace_of_spades.png",
+      "frame": "ace_of_spades.png"
+    },
+    {
+      "rank": "2",
+      "value": 2,
+      "suit": "spades",
+      "file": "faces/2_of_spades.png",
+      "frame": "2_of_spades.png"
+    },
+    {
+      "rank": "3",
+      "value": 3,
+      "suit": "spades",
+      "file": "faces/3_of_spades.png",
+      "frame": "3_of_spades.png"
+    },
+    {
+      "rank": "4",
+      "value": 4,
+      "suit": "spades",
+      "file": "faces/4_of_spades.png",
+      "frame": "4_of_spades.png"
+    },
+    {
+      "rank": "5",
+      "value": 5,
+      "suit": "spades",
+      "file": "faces/5_of_spades.png",
+      "frame": "5_of_spades.png"
+    },
+    {
+      "rank": "6",
+      "value": 6,
+      "suit": "spades",
+      "file": "faces/6_of_spades.png",
+      "frame": "6_of_spades.png"
+    },
+    {
+      "rank": "7",
+      "value": 7,
+      "suit": "spades",
+      "file": "faces/7_of_spades.png",
+      "frame": "7_of_spades.png"
+    },
+    {
+      "rank": "8",
+      "value": 8,
+      "suit": "spades",
+      "file": "faces/8_of_spades.png",
+      "frame": "8_of_spades.png"
+    },
+    {
+      "rank": "9",
+      "value": 9,
+      "suit": "spades",
+      "file": "faces/9_of_spades.png",
+      "frame": "9_of_spades.png"
+    },
+    {
+      "rank": "10",
+      "value": 10,
+      "suit": "spades",
+      "file": "faces/10_of_spades.png",
+      "frame": "10_of_spades.png"
+    },
+    {
+      "rank": "J",
+      "value": 10,
+      "suit": "spades",
+      "file": "faces/jack_of_spades.png",
+      "frame": "jack_of_spades.png",
+      "character": "Lancer",
+      "portrait": "court/jack-lancer.png",
+      "editableSource": "editable/manual/jack_of_spades.psd"
+    },
+    {
+      "rank": "Q",
+      "value": 10,
+      "suit": "spades",
+      "file": "faces/queen_of_spades.png",
+      "frame": "queen_of_spades.png",
+      "character": "Blackjack",
+      "portrait": "court/queen-blackjack.png",
+      "editableSource": "editable/manual/queen_of_spades.psd"
+    },
+    {
+      "rank": "K",
+      "value": 10,
+      "suit": "spades",
+      "file": "faces/king_of_spades.png",
+      "frame": "king_of_spades.png",
+      "character": "Light Hooves",
+      "portrait": "court/king-light-hooves.png",
+      "editableSource": "editable/manual/king_of_spades.psd"
+    }
+  ]
+}

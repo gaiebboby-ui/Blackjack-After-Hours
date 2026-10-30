@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-30",
+  "count": 12,
+  "cards": [
+    {
+      "source": "assets/cards/editable/manual/jack_of_clubs.psd",
+      "sourceSha256": "f20a0a635f4ca320b9bc5dd648cdd393f63ca41bd9decc3c22a4e338314664b2",
+      "export": "assets/cards/faces/jack_of_clubs.png",
+      "exportSha256": "9f1e51837e672062860347a56b49450e3d62bb80e947b0f41c6511dcae3256a0"
+    },
+    {
+      "source": "assets/cards/editable/manual/jack_of_diamonds.psd",
+      "sourceSha256": "e06c90724af3fe83fcdb5de5c634b1396d9bcd7e89e8545a202c6eeee3532dab",
+      "export": "assets/cards/faces/jack_of_diamonds.png",
+      "exportSha256": "e061afaeb00305bdab1d817a9328c5585a19b751801d5cdd83fbecda9ff00c18"
+    },
+    {
+      "source": "assets/cards/editable/manual/jack_of_hearts.psd",
+      "sourceSha256": "16a328d35c854007f2e2e4477907c84ae5c1af25d2fff3e565e74d3e4628568b",
+      "export": "assets/cards/faces/jack_of_hearts.png",
+      "exportSha256": "b3d10127e385b216f39048ffec2d410a63eaf85b1dff3a1104589ea5e7429a78"
+    },
+    {
+      "source": "assets/cards/editable/manual/jack_of_spades.psd",
+      "sourceSha256": "cdfc24032b59642c4888623d5217039f3f76c20beb1ae1e4fbcbce2c1858bee1",
+      "export": "assets/cards/faces/jack_of_spades.png",
+      "exportSha256": "6398879da8a2adc589eff1352076ce5c3041e0c7448930d460011f6145029ef4"
+    },
+    {
+      "source": "assets/cards/editable/manual/king_of_clubs.psd",
+      "sourceSha256": "929a489d45921635290a9df714b8ddc8133f29432d16126317c53e5767fa3ac3",
+      "export": "assets/cards/faces/king_of_clubs.png",
+      "exportSha256": "c2e2afb1984f765b485ca1cc14f375f4d50e8801b9b936233e953414d22d2cce"
+    },
+    {
+      "source": "assets/cards/editable/manual/king_of_diamonds.psd",
+      "sourceSha256": "333a7b36a4800715256b0b103ef0174a04eb72bc14db5843bd40590cbfbda244",
+      "export": "assets/cards/faces/king_of_diamonds.png",
+      "exportSha256": "d6f987201e83f21e684c6ea902e2f2c7fae6a22a31b85cf7f1db15f31e4bce00"
+    },
+    {
+      "source": "assets/cards/editable/manual/king_of_hearts.psd",
+      "sourceSha256": "b52e2e4671cc69594e77b9f93a3487adbb1b7b1f425c90ac02d95479c8714c33",
+      "export": "assets/cards/faces/king_of_hearts.png",
+      "exportSha256": "e731abc2164157263fec922890ac260bce01381b8ad7cab53c842a2439e2d48f"
+    },
+    {
+      "source": "assets/cards/editable/manual/king_of_spades.psd",
+      "sourceSha256": "3a2cb92341f0e9e3fa7be0c76dce6ae2bb837c2d16d4993d011b2b28ba37daa6",
+      "export": "assets/cards/faces/king_of_spades.png",
+      "exportSha256": "e4afab592fe9435ff5387334edd6a25a0ec12ab8871c8d1847e062dea7d28e0c"
+    },
+    {
+      "source": "assets/cards/editable/manual/queen_of_clubs.psd",
+      "sourceSha256": "37324d665e54badaa3bd1747c739fb55e49ac95552c1ba97888ec5d1581fd910",
+      "export": "assets/cards/faces/queen_of_clubs.png",
+      "exportSha256": "968df7bbaee0addaace92d62a56e707afd7e39fd9f6b2d51a87e95dbe03eb2c4"
+    },
+    {
+      "source": "assets/cards/editable/manual/queen_of_diamonds.psd",
+      "sourceSha256": "d8009b59b2ad8274260ebbe639e0d0e8e04e568729a1f1dab1d06db56645b895",
+      "export": "assets/cards/faces/queen_of_diamonds.png",
+      "exportSha256": "04acf0ad28841d564401cfc521879029016c87103f746fbc7694f41e7bb6fd6c"
+    },
+    {
+      "source": "assets/cards/editable/manual/queen_of_hearts.psd",
+      "sourceSha256": "7dbe5c88499db0f999f7ebcdc57f69be239ac589b9ca5df569423a62b25b3cf2",
+      "export": "assets/cards/faces/queen_of_hearts.png",
+      "exportSha256": "84fc676b91b064759c5f82a9ee6e3c04225d0d65d6f074cf2282cf5c14b4b1e7"
+    },
+    {
+      "source": "assets/cards/editable/manual/queen_of_spades.psd",
+      "sourceSha256": "075100e12fab20a7cb1bbe157ee0f637894bd4027d7ec68e9a2e13682a349b07",
+      "export": "assets/cards/faces/queen_of_spades.png",
+      "exportSha256": "66aac2e2f92b631d06b8653a17347e1a9184c3bebac4c96646f7bf2b63de90ab"
+    }
+  ]
+}
