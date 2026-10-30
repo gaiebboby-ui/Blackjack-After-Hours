@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const manifest = JSON.parse(await readFile(path.join(root, 'docs/artwork-provenance.json'), 'utf8'));
+const manifest = JSON.parse(await readFile(path.join(root, 'doc/artwork-provenance.json'), 'utf8'));
 const approved = new Map(manifest.images.map(image => [image.file, image]));
 const extensions = new Set(manifest.imageExtensions);
 const found = new Set();
@@ -44,7 +44,7 @@ async function scanText(folder) {
 }
 await checkExternalImages('README.md');
 await checkExternalImages('index.html');
-await scanText('docs');
+await scanText('doc');
 await scanText('src');
 if (errors.length) {
   console.error(errors.join('\n'));

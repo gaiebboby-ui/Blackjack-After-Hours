@@ -16,7 +16,7 @@ PSD предназначен для Photoshop и совместимых реда
 
 Повторный экспорт: `python assets/cards/build_deck.py --no-editable`. Он обновляет все 52 PNG, атласы и превью, но не переписывает PSD/ORA. Для другой папки с PSD: `python assets/cards/build_deck.py --from-psd <папка> --no-editable`. Имена должны соответствовать картам (`queen_of_spades.psd`), размер — 512×716. Все входные PSD проверяются до записи результатов. Независимые ORA в `generated/` остаются первоначальными экспортами и не синхронизируются с ручными изменениями PSD.
 
-После новых ручных изменений проверьте экспорт и обновите соответствующие записи `docs/artwork-provenance.json`, затем выполните `npm run build`. Сверка SHA-256 принятых 12 исходников и PNG записана в `assets/cards/editable/psd-import-report.json`. Прежние игровые PNG сохранены в `artifacts/before-psd-import-2026-10-30/`. Превью стадий процедурной сборки не пересоздаётся при использовании ручных PSD; актуальное оформление показывают `retro-court-preview.png`, `retro-style-preview.png` и `blackjack-deck-preview.png`.
+После новых ручных изменений проверьте экспорт и обновите соответствующие записи `doc/artwork-provenance.json`, затем выполните `npm run build`. Сверка SHA-256 принятых 12 исходников и PNG записана в `assets/cards/editable/psd-import-report.json`. Прежние игровые PNG сохранены в `artifacts/before-psd-import-2026-10-30/`. Превью стадий процедурной сборки не пересоздаётся при использовании ручных PSD; актуальное оформление показывают `retro-court-preview.png`, `retro-style-preview.png` и `blackjack-deck-preview.png`.
 
 Общие оригинальные компоненты оформления в полном исходном разрешении лежат в `assets/cards/layers/`, портреты — в `assets/cards/court/`. Экспорт карт не меняет эти оригиналы.
 

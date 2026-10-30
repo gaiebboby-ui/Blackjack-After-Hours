@@ -3,7 +3,7 @@
   "auditedAt": "2026-10-30",
   "scope": [
     "assets",
-    "docs/media",
+    "doc/media",
     "public",
     "android/app/src/main/res"
   ],
@@ -1399,14 +1399,14 @@
       "evidence": "Archived generation manifest: 01a17b77-c146-70d1-aa0a-ce9532f381d2/exec-5e4ab730-da1f-4fea-ab66-fb24d58629ac.png"
     },
     {
-      "file": "docs/media/gameplay.png",
+      "file": "doc/media/gameplay.png",
       "sha256": "c9316c39be92c2dc304cb2ecadf5f80a62932331822612385e6ae77c90537350",
       "optional": false,
       "kind": "project-screenshot",
       "evidence": "Screenshot captured from the locally built game during publication preparation; contains approved game assets and project-drawn UI."
     },
     {
-      "file": "docs/media/readme-banner.png",
+      "file": "doc/media/readme-banner.png",
       "sha256": "0c04a43b95fe6034f506bbebd592cf5279ea17b1214982340d0fedeae19be4e3",
       "optional": false,
       "kind": "project-generated",
@@ -1540,7 +1540,7 @@
       "evidence": "WebP export of user-selected ink/noir artwork from assets/title-screen-master.png."
     },
     {
-      "file": "docs/media/start-screen.png",
+      "file": "doc/media/start-screen.png",
       "sha256": "64985391dde7aecfaa2ed219cf4fa07ee2b80fa0cbb9b490ea612bc6af0bf0e6",
       "optional": false,
       "kind": "derived",
