@@ -11,6 +11,8 @@ Pages uses GitHub Actions, and HTTPS is enforced. The first deployment uses rele
 3. The Pages workflow checks out that exact tag, runs the tests, builds with the configured project base path and deploys the result.
 4. Verify version.json, the title screen, gameplay, music and mobile layout at the live URL.
 
+The current `github-pages` environment permits deployment from `main`. Automatic release events run from a tag and are therefore rejected by that policy. Until tag deployment is explicitly approved, publish each stable update with the Pages workflow's manual run: select `main` and enter the exact release tag (for example `v1.0.2`). This keeps the existing protection policy and still builds the immutable tagged source.
+
 Draft and prerelease releases do not deploy. The workflow can also be dispatched manually with an existing stable tag to redeploy or restore a release. The github-pages environment must allow the deployment's ref and tags v* if deployment branch restrictions are enabled.
 
 No personal access token or Android signing key is used for Pages. The repository homepage and README point to the live site. The earlier plan restriction for Pages from a private repository no longer applies to this public repository.
