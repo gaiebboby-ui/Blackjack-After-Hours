@@ -49,3 +49,12 @@ assets/cards/court/court-portraits-preview.png
 # Reproducible layered editor exports (keep manual masters separately)
 assets/cards/editable/generated/
 assets/editable/generated/
+
+# Generated license copies for distributable builds
+/public/LICENSE
+/public/THIRD_PARTY_NOTICES.txt
+
+# Alternative signing files must never enter Git
+*.p12
+*.pfx
+/signing/

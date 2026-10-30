@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="doc/media/readme-banner.png" alt="Blackjack · After Hours" width="100%">
+  <img src="assets/title-screen-master.png" alt="Blackjack · After Hours" width="100%">
 </p>
 
 # Blackjack · After Hours

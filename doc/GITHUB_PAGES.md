@@ -1,74 +1,22 @@
-# GitHub Pages: публикация релизов
+# GitHub Pages and repository settings
 
-Проверено по официальной документации GitHub и Vite 30 октября 2026 года.
+The source repository remains private. README intentionally shows a placeholder until a web deployment exists.
 
-## Подходит ли размещение
+## Current restrictions
 
-Да: проект собирается в статические HTML, CSS, JavaScript и изображения. Правила, звук и анимация выполняются в браузере; баланс и настройки хранятся в localStorage. База данных, сервер приложения, платёжные операции и серверные аккаунты отсутствуют. Браузер обращается к хостингу за файлами игры; собственного API у проекта нет. Pages подходит для такого формата.
+GitHub Pages from a private personal repository requires GitHub Pro or another eligible paid plan. The current GitHub API also rejects ruleset and branch-protection configuration with an upgrade-required response. These are account restrictions; workflow changes cannot remove them. Do not make the source public or purchase a subscription automatically to bypass them.
 
-По изученным правилам бесплатная игра на виртуальные фишки соответствует назначению Pages как витрины проекта. Это вывод по текущей реализации, а не индивидуальное разрешение GitHub. Pages не предназначен для интернет-магазина или коммерческого SaaS. Действуют общие правила контента и интеллектуальных прав; фанатский статус не заменяет права на публикацию графики.
+Until branch protection is available, use pull requests and check the web and Android Checks jobs before merging. This is a working convention, not enforced protection. After a plan upgrade, require both checks, disallow force pushes and deletion, and apply protection to administrators where appropriate.
 
-GitHub Free поддерживает Pages для публичных репозиториев. Для Pages из приватного репозитория требуется подходящий платный тариф; сам сайт может быть публичным. Лимит опубликованного сайта — 1 ГБ, мягкий лимит трафика — 100 ГБ в месяц, тайм-аут развёртывания — 10 минут. Текущий сайт значительно меньше 1 ГБ. Ресурсы игры довольно объёмные, поэтому трафик стоит отслеживать при росте аудитории. Ограничение 10 сборок в час не применяется к сборке через собственный Actions workflow.
+## Enable Pages when ready
 
-## Однократная настройка репозитория
+1. Confirm that the plan supports Pages for this private repository and decide whether the resulting site may be public.
+2. Select GitHub Actions as the Pages build source.
+3. Set repository variable ENABLE_PRIVATE_PAGES=true only when publication is intended.
+4. Allow tags v* and main in the github-pages environment.
+5. Publish a stable release or manually run the Pages workflow for an existing stable tag.
+6. Verify version.json and gameplay, then replace the README placeholder with the actual deployment URL.
 
-1. Разместите исходники в GitHub-репозитории. Для бесплатного Pages выберите Public. Архив `_archive/`, зависимости, `dist/`, APK и ключи подписи не добавляйте: исключения уже настроены.
-2. В основной ветке должны находиться `.github/workflows/check.yml` и `.github/workflows/pages.yml` из этой версии проекта.
-3. В **Settings → Pages → Build and deployment → Source** выберите **GitHub Actions**.
-4. В **Settings → Environments → github-pages** проверьте правила развёртывания. Если включено **Selected branches and tags**, разрешите **теги `v*`**, а для ручного запуска из основной ветки — **ветку `main`**. Правило только для `main` заблокирует автоматический запуск по релизу. Если нужны полностью автоматические обновления, не добавляйте обязательного ручного подтверждения окружения.
-5. Если организация ограничивает разрешённые Actions, разрешите используемые официальные `actions/checkout`, `actions/setup-node`, `actions/configure-pages`, `actions/upload-pages-artifact` и `actions/deploy-pages`.
+The Pages workflow builds the exact release tag, includes licenses and uses the base path supplied by configure-pages. Draft and prerelease releases do not deploy. No personal access token or signing key is needed.
 
-Отдельные PAT, пароли и секреты деплоя не нужны: используется стандартный временный `GITHUB_TOKEN` и OIDC. Права записи Pages выдаются только заданию развёртывания. GitHub должен разрешать Actions для репозитория.
-
-Обычный адрес проекта: `https://USERNAME.github.io/REPOSITORY/`. Фактический адрес будет показан в Settings → Pages и в результате задания deploy. Репозитории `USERNAME.github.io` и собственный домен также поддерживаются: базовый путь берётся из `configure-pages`, имя репозитория в коде не зашито.
-
-## Как выпускать обновления
-
-1. Отправьте проверенные изменения в основную ветку. CI выполнит `npm ci`, тесты, проверку TypeScript и сборку с непустым базовым путём.
-2. Создайте **GitHub Release** с новым тегом формата **`v1.2.2`** на нужном коммите. Тег должен указывать на исходники с этой конфигурацией CI/CD.
-3. Опубликуйте стабильный релиз и отметьте его **Latest**. Простое создание тега, черновик или prerelease сайт не обновляют.
-4. Workflow соберёт именно исходники тега, заново проверит тесты, загрузит только `dist/` и развернёт Pages. Если проверка или сборка падает, новое развёртывание не запускается и текущий сайт остаётся доступным.
-
-Версия веб-игры берётся автоматически из тега: `v1.2.2` → `1.2.2`. Она отображается в игровом меню и записывается в `version.json` рядом с тегом и коммитом исходников. Ручная правка package.json для этого не требуется: его версия используется при обычной локальной сборке. Версия Android этим workflow не меняется; сборка и публикация APK в его объём не входят.
-
-Изображения Pixi получают параметр версии в URL, чтобы новый релиз не использовал старые изображения из кэша. Открытую вкладку после развёртывания нужно обновить. Сохранения браузера при обновлении не очищаются.
-
-Задания Pages сериализованы. Перед автоматическим развёртыванием проверяется, что релиз всё ещё отмечен Latest: повторный запуск старого релиза не должен откатить более новый. При публикации нескольких релизов подряд GitHub может заменить ожидающий запуск более новым.
-
-Если релиз создаёт другой workflow, обычный `GITHUB_TOKEN` не запускает произвольные последующие workflows; для такого будущего конвейера потребуется отдельно согласовать способ вызова. Текущая схема рассчитана на публикацию релиза пользователем через интерфейс GitHub или его авторизованный CLI.
-
-## Ручной повтор или откат
-
-В **Actions → Deploy release to GitHub Pages → Run workflow** выберите основную ветку, укажите существующий стабильный тег в поле `tag` и запустите workflow. Так можно восстановить предыдущую версию, которая содержит эту конфигурацию сборки. Ручной запуск намеренно обходит проверку Latest, но сохраняет тесты и проверку формата тега. После отката следующий опубликованный Latest-релиз снова обновит сайт.
-
-## Локальная проверка адреса и версии
-
-В PowerShell:
-
-```powershell
-$env:APP_RELEASE_TAG = 'v1.2.2'
-$env:PAGES_BASE_PATH = '/BlackJack'
-npm run build
-npm run preview
-Remove-Item Env:APP_RELEASE_TAG, Env:PAGES_BASE_PATH
-```
-
-Откройте `http://127.0.0.1:4173/BlackJack/`. Проверить опубликованный номер можно по `https://USERNAME.github.io/REPOSITORY/version.json` и в меню игры. Переменные предназначены только для сборки, ключей доступа в них нет. При сборке из CI коммит считывается после checkout тега, поэтому ручной запуск также показывает точный коммит исходников.
-
-Локально проверены 46 тестов, обычная сборка и релизная сборка с версией из тега, а также работа Chrome по адресу с подпапкой. Настоящее выполнение GitHub Actions и публичный адрес можно проверить после подключения репозитория: приватный репозиторий gaiebboby-ui/Blackjack-After-Hours подключён; публичный Pages пока не включён.
-
-## Официальные источники
-
-- [Что такое GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
-- [Условия и лимиты Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
-- [Общие правила, в том числе интеллектуальные права](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies).
-- [Настройка источника публикации](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-- [Собственный workflow Pages и его разрешения](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
-- [Событие release](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#release).
-- [Разрешённые ветки и теги окружения](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments#deployment-branches-and-tags).
-- [Ограничение повторного запуска событий с GITHUB_TOKEN](https://docs.github.com/en/actions/how-tos/writing-workflows/choosing-when-your-workflow-runs/triggering-a-workflow).
-- [Публикация Vite в Pages](https://vite.dev/guide/static-deploy.html#github-pages).
-
-## Приватный репозиторий
-
-Для приватного репозитория Pages намеренно пропускается, пока переменная репозитория `ENABLE_PRIVATE_PAGES` не равна `true`. Это предотвращает попытку публикации сайта при выпуске Android-релиза. Чтобы включить его, сначала убедитесь, что тариф разрешает Pages для приватных репозиториев, настройте Pages и окружение по инструкции выше, затем установите переменную. Сам факт приватности исходников не гарантирует приватность Pages-сайта. APK публикуется как файл приватного GitHub Release и доступен авторизованным пользователям с доступом к репозиторию.
+Official reference: [GitHub Pages availability](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).

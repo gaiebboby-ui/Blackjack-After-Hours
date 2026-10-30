@@ -8,15 +8,39 @@ android {
         applicationId 'com.afterhours.blackjack'
         minSdk 26
         targetSdk 36
-        versionCode 6
+        versionCode 7
         versionName appPackage.version
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
-    buildTypes { release { minifyEnabled false } }
+    signingConfigs {
+        stableRelease {
+            if (System.getenv('BLACKJACK_KEYSTORE_PATH')) {
+                storeFile file(System.getenv('BLACKJACK_KEYSTORE_PATH'))
+                storePassword System.getenv('BLACKJACK_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('BLACKJACK_KEY_ALIAS')
+                keyPassword System.getenv('BLACKJACK_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (System.getenv('BLACKJACK_KEYSTORE_PATH')) signingConfig signingConfigs.stableRelease
+        }
+    }
 }
 tasks.register('syncGame', Sync) { from '../../dist'; into 'src/main/assets' }
-tasks.named('preBuild').configure { dependsOn 'syncGame' }
+tasks.register('nativeDependencyNotices') {
+    dependsOn 'syncGame'
+    doLast {
+        def coordinates = configurations.releaseRuntimeClasspath.incoming.resolutionResult.allComponents
+            .collect { it.moduleVersion?.toString() }.findAll { it != null }.sort()
+        file('src/main/assets/ANDROID_DEPENDENCIES.txt').text =
+            'Resolved Android runtime dependencies\n\n' + coordinates.join('\n') + '\n'
+    }
+}
+tasks.named('preBuild').configure { dependsOn 'nativeDependencyNotices' }
 dependencies {
     implementation 'androidx.webkit:webkit:1.14.0'
     androidTestImplementation 'androidx.test:runner:1.6.2'

@@ -1406,13 +1406,6 @@
       "evidence": "Screenshot captured from the locally built game during publication preparation; contains approved game assets and project-drawn UI."
     },
     {
-      "file": "doc/media/readme-banner.png",
-      "sha256": "0c04a43b95fe6034f506bbebd592cf5279ea17b1214982340d0fedeae19be4e3",
-      "optional": false,
-      "kind": "project-generated",
-      "evidence": "Exact generated output: 01a18d53-bb05-7ea3-bec0-90db8f393ed6/exec-ad8d2582-35e7-4e26-8e66-44b698d0c302.png; user selected the ink/noir variant on 2026-10-30."
-    },
-    {
       "file": "public/favicon.ico",
       "sha256": "1b7c5ddf06dfa8f45676d2278e356a811073574adc1a9624780aa1b486eb67ad",
       "optional": false,

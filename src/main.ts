@@ -6,12 +6,17 @@ import { Blackjack, total, type GameState } from './engine';
 import { TableScene } from './scene';
 import { TableAudio } from './table-audio';
 import { TitleMusic } from './title-music';
+import { TableMusic } from './table-music';
+import { savedHistory, savedSettings } from './saved-state';
 
 const read = <T>(key: string, fallback: T): T => { try { return JSON.parse(localStorage.getItem(key) ?? 'null') ?? fallback; } catch { return fallback; } };
 const save = (key: string, value: unknown) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* Private browsing can deny storage; the round still works. */ } };
 const defaultPreferences = { sound: false, musicVolume: 65, sfxVolume: 65, motion: true, fast: false, scale: 120, crt: true, dialogue: true, language: 'auto' as LanguageChoice, filter: 'green' as 'none' | 'green' | 'sepia', scaleVersion: 2 };
-const storedPreferences = read<Partial<typeof defaultPreferences>>('blackjack-settings-v1', {});
+const storedPreferences = savedSettings(read<unknown>('blackjack-settings-v1', {})) as Partial<typeof defaultPreferences>;
 const preferences = { ...defaultPreferences, ...storedPreferences };
+for (const key of ['sound', 'motion', 'fast', 'crt', 'dialogue'] as const) {
+  if (typeof preferences[key] !== 'boolean') preferences[key] = defaultPreferences[key];
+}
 preferences.musicVolume = volumePercent(preferences.musicVolume);
 preferences.sfxVolume = volumePercent(preferences.sfxVolume);
 if (storedPreferences.scaleVersion !== 2 && Object.hasOwn(storedPreferences, 'scale')) {
@@ -26,7 +31,7 @@ setLanguage(preferences.language);
 const systemReduced = matchMedia('(prefers-reduced-motion: reduce)');
 const savedBank = read<number>('blackjack-bank-v1', 2000);
 const initialBank = Number.isFinite(savedBank) && savedBank >= 0 && savedBank <= 1e9 ? Math.floor(savedBank) : 2000;
-const history = read<number[]>('blackjack-history-v1', []).filter(n => Number.isFinite(n)).slice(-12);
+const history = savedHistory(read<unknown>('blackjack-history-v1', []));
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 <main class="shell">
@@ -80,18 +85,21 @@ tableShell.inert = true;
 let ready = false, lastCompleted = 0;
 const tableAudio = new TableAudio();
 const titleMusic = new TitleMusic(import.meta.env.BASE_URL);
+const tableMusic = new TableMusic(import.meta.env.BASE_URL);
 function sound(kind: 'card' | 'flip' | 'chip' | 'win') {
   tableAudio.play(kind);
 }
 function unlockAudio() {
   tableAudio.unlock(preferences.sound);
   titleMusic.setEnabled(preferences.sound && !welcomed && !document.hidden);
+  tableMusic.setEnabled(preferences.sound && welcomed && !document.hidden);
 }
 const game = new Blackjack(initialBank, ms => new Promise(r => setTimeout(r, systemReduced.matches || !preferences.motion ? 0 : preferences.fast ? ms * .32 : ms)));
 function settings() {
   translateInterface();
   tableAudio.setVolume(preferences.sfxVolume);
   titleMusic.setVolume(preferences.musicVolume);
+  tableMusic.setVolume(preferences.musicVolume);
   for (const key of ['musicVolume', 'sfxVolume'] as const) {
     el<HTMLInputElement>('pref-' + key).value = String(preferences[key]);
     el<HTMLInputElement>('pref-' + key).setAttribute('aria-valuetext', preferences[key] + '%');
@@ -195,10 +203,11 @@ button('reset-confirm').onclick=()=>{ reset(); el<HTMLDialogElement>('reset-dial
 button('sound').onclick=()=>{ preferences.sound=!preferences.sound; unlockAudio(); settings(); };
 button('welcome-sound').onclick=()=>{ preferences.sound=!preferences.sound; unlockAudio(); settings(); };
 // Browsers allow audio after a gesture. Saved sound preferences remain respected.
-document.addEventListener('pointerdown',()=>{ if (!welcomed && preferences.sound) unlockAudio(); },{passive:true});
-document.addEventListener('keydown',()=>{ if (!welcomed && preferences.sound) unlockAudio(); });
+document.addEventListener('pointerdown',()=>{ if (preferences.sound) unlockAudio(); },{passive:true});
+document.addEventListener('keydown',()=>{ if (preferences.sound) unlockAudio(); });
 document.addEventListener('visibilitychange',()=>{
   titleMusic.setEnabled(preferences.sound && !welcomed && !document.hidden);
+  tableMusic.setEnabled(preferences.sound && welcomed && !document.hidden);
 });
 for (const key of ['sound','motion','fast','dialogue'] as const) el<HTMLInputElement>('pref-'+key).onchange=e=>{ preferences[key]=(e.target as HTMLInputElement).checked; unlockAudio(); settings(); };
 el<HTMLInputElement>('pref-scale').oninput=e=>{ preferences.scale=Number((e.target as HTMLInputElement).value); settings(); };

@@ -1,43 +1,11 @@
-# Подготовка версии 1.2.1 к публикации
+# Release procedure
 
-Проверено 30 октября 2026 года с актуальной колодой Retro Casino и выбранной пользователем обложкой.
+1. Update package.json and package-lock.json; increment Android versionCode.
+2. Run a clean dependency installation, npm audit, npm test, artwork export tests, npm run build, browser smoke tests and Android device tests.
+3. Generate THIRD_PARTY_NOTICES.txt with the normal build. Commit LICENSE, notices, sources and release notes.
+4. Push the exact tested commit and create an annotated vX.Y.Z tag. Never move a published tag to change release contents.
+5. Build with APP_RELEASE_TAG and APP_COMMIT set to that tag and commit. Build the signed Android release with explicit credentials, or clearly label a debug test APK.
+6. Package dist/ as the web archive and use git archive on the tag for the source archive. Both must contain LICENSE and THIRD_PARTY_NOTICES.txt. Inspect the APK for matching licenses and audio assets.
+7. Generate SHA-256 checksums, upload all files to a new private GitHub Release and compare GitHub asset digests with local hashes.
 
-## Выполненные проверки
-
-- 32 автоматических теста: все проходят.
-- TypeScript и производственная сборка Vite: успешно.
-- Чистая копия только публикуемых исходников, без `_archive/`, `public/game/`, `dist/` и локальных кэшей: установка зависимостей из npm-кэша, тесты и сборка успешны.
-- Google Chrome: загрузка статической сборки по `/blackjack/`, все ресурсы доступны, раздача и завершение раунда, открытие настроек и переключение CRT. Ошибок JavaScript и HTTP-загрузки не обнаружено.
-- Компоновка 1440×1000 и 390×844: проверена; на мобильной ширине горизонтального переполнения нет.
-- Android: `assembleDebug` и `assembleDebugAndroidTest` выполнены успешно. Проверены ресурсы новой иконки. Инструментальные тесты на устройстве в рамках этой подготовки не запускались.
-- Архив, зависимости, результаты сборок, локальные настройки SDK и ключи подписи исключены из Git. Файлов больше 50 МиБ в исходниках нет.
-
-Локальные отчёты и снимки проверки находятся в `artifacts/`; они не включаются в репозиторий.
-
-## Готовые файлы
-
-- `artifacts/Blackjack-After-Hours-1.2.1-web.zip` — содержимое `dist/`, готовое к распаковке в корень сайта или подпапку.
-- `artifacts/Blackjack-After-Hours-1.2.1.apk` — Android-приложение с отладочной подписью для тестовой установки.
-- `artifacts/Blackjack-After-Hours-1.2.1-source.zip` — снимок проверенных исходников после проверки происхождения изображений, без локального архива и зависимостей.
-- `artifacts/SHA256SUMS.txt` — SHA-256 этих трёх файлов.
-
-Файлы в `artifacts/` локальные и исключены из Git. Чтобы приложить их к релизу на выбранной площадке, загрузите их отдельно.
-
-## Повторная сборка веб-пакета
-
-```sh
-npm ci
-npm test
-npm run build
-```
-
-На Windows упакуйте результат:
-
-```powershell
-New-Item -ItemType Directory -Path artifacts -Force
-Compress-Archive -Path dist/* -DestinationPath artifacts/Blackjack-After-Hours-1.2.1-web.zip -Force
-```
-
-Загрузите содержимое веб-пакета на статический HTTP(S)-хостинг. Проверьте раздачу и настройки по опубликованному адресу. Для Android-магазина нужна отдельная release-сборка и собственный ключ подписи; данный APK остаётся тестовым.
-
-Git-репозиторий подготовлен локально. Удалённый репозиторий и хостинг не назначены, отправка файлов во внешние сервисы не выполнялась. Вопрос лицензии отражён в README.
+The source archive must match the binaries. The v1.0.0 tag predates the GPL and notice-packaging changes; keep it immutable and use v1.0.1 or later for corrected distributions. GitHub Pages remains disabled until the account supports Pages for a private repository and publication is explicitly enabled.

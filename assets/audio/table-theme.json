@@ -1,0 +1,120 @@
+{
+  "title": "Midnight Circuit - Long Orbit",
+  "bars": 384,
+  "bpm": 102.4,
+  "durationSeconds": 900,
+  "sampleRate": 32000,
+  "loopStartSample": 0,
+  "loopEndSample": 28800000,
+  "meter": "4/4",
+  "chapters": [
+    {
+      "name": "Glass Lobby",
+      "startBar": 1,
+      "startSeconds": 0.0
+    },
+    {
+      "name": "Quiet Signals",
+      "startBar": 33,
+      "startSeconds": 75.0
+    },
+    {
+      "name": "Neon Tide",
+      "startBar": 65,
+      "startSeconds": 150.0
+    },
+    {
+      "name": "Velvet Return",
+      "startBar": 97,
+      "startSeconds": 225.0
+    },
+    {
+      "name": "Afterimage",
+      "startBar": 129,
+      "startSeconds": 300.0
+    },
+    {
+      "name": "Chrome Alley",
+      "startBar": 161,
+      "startSeconds": 375.0
+    },
+    {
+      "name": "Low Lights",
+      "startBar": 193,
+      "startSeconds": 450.0
+    },
+    {
+      "name": "Blue Current",
+      "startBar": 225,
+      "startSeconds": 525.0
+    },
+    {
+      "name": "Neon Reprise",
+      "startBar": 257,
+      "startSeconds": 600.0
+    },
+    {
+      "name": "Wire Garden",
+      "startBar": 289,
+      "startSeconds": 675.0
+    },
+    {
+      "name": "Home Lights",
+      "startBar": 321,
+      "startSeconds": 750.0
+    },
+    {
+      "name": "Orbital Return",
+      "startBar": 353,
+      "startSeconds": 825.0
+    }
+  ],
+  "electronicSwells": [
+    {
+      "centreBar": 73,
+      "centreSeconds": 168.75,
+      "riseBars": 8,
+      "peakBars": 4,
+      "fallBars": 8
+    },
+    {
+      "centreBar": 137,
+      "centreSeconds": 318.75,
+      "riseBars": 8,
+      "peakBars": 4,
+      "fallBars": 8
+    },
+    {
+      "centreBar": 217,
+      "centreSeconds": 506.25,
+      "riseBars": 8,
+      "peakBars": 4,
+      "fallBars": 8
+    },
+    {
+      "centreBar": 281,
+      "centreSeconds": 656.25,
+      "riseBars": 8,
+      "peakBars": 4,
+      "fallBars": 8
+    },
+    {
+      "centreBar": 313,
+      "centreSeconds": 731.25,
+      "riseBars": 8,
+      "peakBars": 4,
+      "fallBars": 8
+    }
+  ],
+  "validation": {
+    "noteCount": 17326,
+    "maxEnvelopeChangePerSixteenth": 0.011717796325683594,
+    "allNotesReleased": true,
+    "lastToFirstHarmony": "E7(b9) -> Am9"
+  },
+  "loudness": {
+    "premasterIntegratedLUFS": -19.15,
+    "appliedStaticGainDb": -0.33999999999999986,
+    "estimatedIntegratedLUFS": -19.49
+  }
+}

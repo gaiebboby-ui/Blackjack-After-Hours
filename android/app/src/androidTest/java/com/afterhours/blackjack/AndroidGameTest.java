@@ -96,4 +96,23 @@ public class AndroidGameTest {
         js("localStorage.setItem('blackjack-bank-v1',"+("null".equals(old)?"'2000'":old)+");true");reload();
 
     }
+    @Test public void corruptedHistoryAndTableSoundtrack()throws Exception {
+        ready();
+        String oldHistory=js("localStorage.getItem('blackjack-history-v1')");
+        String oldSettings=js("localStorage.getItem('blackjack-settings-v1')");
+        try {
+            js("localStorage.setItem('blackjack-history-v1','{}');localStorage.setItem('blackjack-settings-v1',JSON.stringify({sound:false,fast:true}));true");
+            reload();ready();
+            js("window.__qaAudio=[];const originalPlay=HTMLMediaElement.prototype.play;HTMLMediaElement.prototype.play=function(){if(!window.__qaAudio.includes(this))window.__qaAudio.push(this);return originalPlay.call(this);};true");
+            tap("#menu-open");waitFor("document.querySelector('#menu-dialog').open");
+            tap("#sound");
+            waitFor("window.__qaAudio.some(a=>a.src.endsWith('table-theme.mp3')&&!a.paused&&a.currentTime>.2)");
+            assertEquals("true",js("window.__qaAudio[0].loop&&Math.abs(window.__qaAudio[0].duration-900)<1"));
+            tap("#sound");waitFor("window.__qaAudio[0].paused");
+            activity.getActivity().runOnUiThread(()->activity.getActivity().onBackPressed());
+        } finally {
+            js(("null".equals(oldHistory)?"localStorage.removeItem('blackjack-history-v1')":"localStorage.setItem('blackjack-history-v1',"+oldHistory+")")+";"+("null".equals(oldSettings)?"localStorage.removeItem('blackjack-settings-v1')":"localStorage.setItem('blackjack-settings-v1',"+oldSettings+")")+";true");
+        }
+    }
+
 }

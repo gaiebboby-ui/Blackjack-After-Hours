@@ -15,6 +15,7 @@ await copy('assets/sprites/bet-token-runtime.png', 'token.png');
 for (const extension of ['ogg', 'mp3']) {
   await copy(`assets/audio/title-theme.${extension}`, `audio/title-theme.${extension}`);
 }
+await copy('assets/audio/table-theme.mp3', 'audio/table-theme.mp3');
 for (const file of await readdir(path.join(root, 'assets/cards/faces'))) {
   if (file.endsWith('.png')) await copy('assets/cards/faces/' + file, 'cards/' + file);
 }
