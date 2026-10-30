@@ -37,7 +37,7 @@ public class AndroidGameTest {
     }
     private void ready()throws Exception {waitFor("!!document.querySelector('#loader')?.hidden && !document.querySelector('#deal')?.disabled");if("true".equals(js("!!document.querySelector('#welcome') && !document.querySelector('#welcome').hidden"))){tap("#welcome-start");waitFor("document.querySelector('#welcome').hidden");}}
     private void tap(String selector)throws Exception {
-        JSONObject rect=new JSONObject(js("(()=>{const r=document.querySelector('"+selector+"').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2,w:innerWidth};})()"));
+        JSONObject rect=new JSONObject(js("(()=>{const control=document.querySelector('"+selector+"');control.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});const r=control.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2,w:innerWidth};})()"));
         WebView web=activity.getActivity().web;float scale=web.getWidth()/(float)rect.getDouble("w");
         float x=(float)rect.getDouble("x")*scale,y=(float)rect.getDouble("y")*scale;
         activity.getActivity().runOnUiThread(()->{long time=SystemClock.uptimeMillis();
