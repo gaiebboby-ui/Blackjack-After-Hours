@@ -1,32 +1,33 @@
 # Blackjack After Hours 1.0.0
 
-Дата: 30 октября 2026 года.
+Atmospheric blackjack for the browser and Android, featuring an animated dealer, an illustrated Retro Casino deck, and a responsive interface.
 
-Это исходная версия новой истории проекта. Первый коммит включает текущее состояние игры; коммиты и теги прежнего репозитория не публикуются в новой истории.
+## Features
 
-Приватный репозиторий: https://github.com/gaiebboby-ui/Blackjack-After-Hours
+- Russian and English interfaces.
+- Desktop and mobile layouts with dedicated title artwork.
+- Saved balance and preferences.
+- Table sound effects, title music, and separate music and effects volume controls.
+- Bundled game assets for offline play in the Android app.
 
-Релиз: https://github.com/gaiebboby-ui/Blackjack-After-Hours/releases/tag/v1.0.0
+## Downloads
 
-## Состав
+- `Blackjack-After-Hours-1.0.0.apk` — Android app for test installation. Requires Android 8.0 or later and an up-to-date Android System WebView.
+- `Blackjack-After-Hours-1.0.0-web.zip` — web build ready for static hosting.
+- `Blackjack-After-Hours-1.0.0-source.zip` — source snapshot from tag `v1.0.0`.
+- `SHA256SUMS-1.0.0.txt` — SHA-256 checksums for the three archives and packages above.
 
-- Адаптивная браузерная игра и Android-приложение.
-- Иллюстрированная колода Retro Casino, анимированный дилер и отдельная мобильная обложка.
-- Русский и английский интерфейс, настройки, сохранение баланса, звуки стола и музыка.
-- Исходники графики и генераторы материалов входят в репозиторий; локальные архивы, зависимости и ключи подписи исключены.
+GitHub Pages is coming soon.
 
-## Проверки
+## Validation
 
-- 59 тестов TypeScript и 4 теста экспорта графики.
-- Проверка 128 утверждённых изображений, TypeScript и производственная веб-сборка.
-- Чистая установка зависимостей из package-lock.json.
-- Проверка Chrome: стартовый экран, раздача, завершение раунда, настройки, размещение в подпапке и мобильная ширина 390 px; ошибок JavaScript и загрузки ресурсов нет.
-- Android APK собран успешно.
+- 59 TypeScript tests and 4 artwork export tests passed.
+- Clean dependency installation, TypeScript checks, artwork verification, and the production web build passed.
+- Chrome checks covered the title screen, dealing, round completion, settings, subdirectory hosting, and a 390 px mobile layout, with no JavaScript or resource loading errors.
+- Android APK built successfully with version name `1.0.0` and version code `6`.
 
-Android использует versionName 1.0.0 и versionCode 6: внутренний код продолжает расти для совместимости с предыдущими установками. APK предназначен для тестовой установки и подписан локальным отладочным ключом; ключ не публикуется. Инструментальные тесты Android на устройстве для этого выпуска не запускались.
+## Notes
 
-Готовые файлы: `Blackjack-After-Hours-1.0.0-web.zip`, `Blackjack-After-Hours-1.0.0.apk` и `SHA256SUMS-1.0.0.txt` в приватном GitHub Release. Публикация GitHub Pages отключена.
+The APK uses a debug signature and is intended for test installation. Android instrumentation tests were not run on a device for this release.
 
-Проверка npm audit выявила три предупреждения в цепочке инструментов тестирования Vitest (одно moderate и два critical). Предлагаемое автоматическое исправление требует перехода на новую основную версию Vitest; оно не включено в этот снимок 1.0.0. Эти зависимости не входят в браузерную сборку.
-
-Документы RELEASE.md и RELEASE-1.3.0.md описывают прежние локальные выпуски, а не версии новой истории.
+The release dependency audit reported three advisories in the Vitest testing toolchain: one moderate and two critical. The suggested automatic fix requires a major Vitest upgrade and is not included in this release. These development dependencies are not bundled with the game.
