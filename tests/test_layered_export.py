@@ -1,6 +1,7 @@
 from io import BytesIO
 from pathlib import Path
 import sys
+import struct
 import tempfile
 import unittest
 from zipfile import ZipFile
@@ -26,13 +27,41 @@ class LayeredExportTests(unittest.TestCase):
                 self.assertEqual(psd.convert('RGBA').tobytes(), expected.tobytes())
                 self.assertEqual(psd.n_frames, 2)
                 raw = (Path(folder) / 'sample.psd').read_bytes()
-                for record, original in zip(psd.layers, reversed(images)):
-                    self.assertEqual(len(record[3]), 4)
-                    for tile in record[3]:
-                        # Pillow exposes layer offsets relative to the layer-info block.
-                        start = psd._layers_position + tile.offset
-                        channel = Image.frombytes('L', original.size, raw[start:], 'packbits', 'L')
-                        self.assertEqual(channel.tobytes(), original.getchannel(tile.args).tobytes())
+                # Read PSD layer records by the file format, not Pillow's private
+                # tile offsets, whose meaning changed between Pillow versions.
+                cursor = 26
+                for _ in range(2):  # colour-mode data and image resources
+                    length = struct.unpack_from('>I', raw, cursor)[0]
+                    cursor += 4 + length
+                cursor += 8  # layer/mask section length and layer-info length
+                count = abs(struct.unpack_from('>h', raw, cursor)[0])
+                cursor += 2
+                self.assertEqual(count, len(images))
+                records = []
+                for _ in range(count):
+                    top, left, bottom, right, channel_count = struct.unpack_from('>4iH', raw, cursor)
+                    cursor += 18
+                    self.assertEqual((right-left, bottom-top), images[0].size)
+                    self.assertEqual(channel_count, 4)
+                    channels = []
+                    for _ in range(channel_count):
+                        channels.append(struct.unpack_from('>hI', raw, cursor))
+                        cursor += 6
+                    self.assertEqual({c[0] for c in channels}, {0, 1, 2, -1})
+                    self.assertEqual(raw[cursor:cursor+8], b'8BIMnorm')
+                    extra_size = struct.unpack_from('>I', raw, cursor+12)[0]
+                    cursor += 16 + extra_size
+                    records.append(channels)
+                channel_names = {0: 'R', 1: 'G', 2: 'B', -1: 'A'}
+                for channels, original in zip(records, reversed(images)):
+                    for channel_id, length in channels:
+                        self.assertEqual(struct.unpack_from('>H', raw, cursor)[0], 1)
+                        row_lengths = struct.unpack_from(f'>{original.height}H', raw, cursor+2)
+                        start = cursor + 2 + 2*original.height
+                        self.assertEqual(sum(row_lengths), length-2-2*original.height)
+                        channel = Image.frombytes('L', original.size, raw[start:cursor+length], 'packbits', 'L')
+                        self.assertEqual(channel.tobytes(), original.getchannel(channel_names[channel_id]).tobytes())
+                        cursor += length
             with ZipFile(Path(folder) / 'sample.ora') as archive:
                 self.assertEqual(archive.namelist()[0], 'mimetype')
                 records = ET.fromstring(archive.read('stack.xml')).findall('./stack/layer')
