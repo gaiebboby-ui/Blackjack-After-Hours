@@ -6,6 +6,6 @@
 4. Push the exact tested commit and create an annotated vX.Y.Z tag. Never move a published tag to change release contents.
 5. Build with APP_RELEASE_TAG and APP_COMMIT set to that tag and commit. Build the signed Android release with explicit credentials, or clearly label a debug test APK.
 6. Package dist/ as the web archive and use git archive on the tag for the source archive. Both must contain LICENSE and THIRD_PARTY_NOTICES.txt. Inspect the APK for matching licenses and audio assets.
-7. Generate SHA-256 checksums, upload all files to a new private GitHub Release and compare GitHub asset digests with local hashes.
+7. Generate SHA-256 checksums, upload all files to a new GitHub Release and compare GitHub asset digests with local hashes.
 
-The source archive must match the binaries. The v1.0.0 tag predates the GPL and notice-packaging changes; keep it immutable and use v1.0.1 or later for corrected distributions. GitHub Pages remains disabled until the account supports Pages for a private repository and publication is explicitly enabled.
+The source archive must match the binaries. The v1.0.0 tag predates the GPL and notice-packaging changes; keep it immutable and use v1.0.1 or later for corrected distributions. GitHub Pages deploys published stable releases from this public repository. Keep draft and prerelease builds unpublished until validation is complete.

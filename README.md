@@ -4,7 +4,7 @@
 
 # Blackjack · After Hours
 
-- **Web version:** GitHub Pages — coming soon.
+- [Play on the web](https://gaiebboby-ui.github.io/Blackjack-After-Hours/)
 - [Download the latest APK](https://github.com/gaiebboby-ui/Blackjack-After-Hours/releases/latest)
 
 ## License

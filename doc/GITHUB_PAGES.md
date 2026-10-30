@@ -1,22 +1,18 @@
-# GitHub Pages and repository settings
+# GitHub Pages
 
-The source repository remains private. README intentionally shows a placeholder until a web deployment exists.
+The repository is public. The live game is hosted at [gaiebboby-ui.github.io/Blackjack-After-Hours](https://gaiebboby-ui.github.io/Blackjack-After-Hours/).
 
-## Current restrictions
+Pages uses GitHub Actions, and HTTPS is enforced. The first deployment uses release v1.0.1. Only the contents of dist/ are deployed; local archives, signing keys and source artwork are not part of the website.
 
-GitHub Pages from a private personal repository requires GitHub Pro or another eligible paid plan. The current GitHub API also rejects ruleset and branch-protection configuration with an upgrade-required response. These are account restrictions; workflow changes cannot remove them. Do not make the source public or purchase a subscription automatically to bypass them.
+## Publish an update
 
-Until branch protection is available, use pull requests and check the web and Android Checks jobs before merging. This is a working convention, not enforced protection. After a plan upgrade, require both checks, disallow force pushes and deletion, and apply protection to administrators where appropriate.
+1. Push the tested release commit and a stable vX.Y.Z tag.
+2. Publish the GitHub Release and mark it Latest.
+3. The Pages workflow checks out that exact tag, runs the tests, builds with the configured project base path and deploys the result.
+4. Verify version.json, the title screen, gameplay, music and mobile layout at the live URL.
 
-## Enable Pages when ready
+Draft and prerelease releases do not deploy. The workflow can also be dispatched manually with an existing stable tag to redeploy or restore a release. The github-pages environment must allow the deployment's ref and tags v* if deployment branch restrictions are enabled.
 
-1. Confirm that the plan supports Pages for this private repository and decide whether the resulting site may be public.
-2. Select GitHub Actions as the Pages build source.
-3. Set repository variable ENABLE_PRIVATE_PAGES=true only when publication is intended.
-4. Allow tags v* and main in the github-pages environment.
-5. Publish a stable release or manually run the Pages workflow for an existing stable tag.
-6. Verify version.json and gameplay, then replace the README placeholder with the actual deployment URL.
+No personal access token or Android signing key is used for Pages. The repository homepage and README point to the live site. The earlier plan restriction for Pages from a private repository no longer applies to this public repository.
 
-The Pages workflow builds the exact release tag, includes licenses and uses the base path supplied by configure-pages. Draft and prerelease releases do not deploy. No personal access token or signing key is needed.
-
-Official reference: [GitHub Pages availability](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+Official reference: [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
