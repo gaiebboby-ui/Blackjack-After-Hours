@@ -8,7 +8,7 @@ android {
         applicationId 'com.afterhours.blackjack'
         minSdk 26
         targetSdk 36
-        versionCode 7
+        versionCode 8
         versionName appPackage.version
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }

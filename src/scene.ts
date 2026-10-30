@@ -2,7 +2,7 @@ import { t } from './i18n';
 import { Application, Assets, Container, Graphics, Sprite, Text, Texture } from 'pixi.js';
 import { total, type Card, type GameState } from './engine';
 import { DealerAnimation, DealerPoseBlend, DEALER_FRAME_COUNT } from './dealer-animation';
-import { tableLayout } from './table-layout';
+import { tableLayout, dealerSpeechLayout, webHandRegion } from './table-layout';
 import { pickInspectableCard } from './card-inspection';
 import { chipPile, MAX_PILE_CHIPS } from './chip-pile';
 import { makePileTextures } from './chip-art';
@@ -168,6 +168,7 @@ export class TableScene {
     document.addEventListener('visibilitychange', () => document.hidden ? this.app.stop() : this.app.start());
   }
   private get mobile() { return matchMedia('(width < 840px)').matches; }
+  private get desktopWeb() { return !this.mobile && !document.documentElement.classList.contains('android-app'); }
   private get compact() { return this.mobile && matchMedia('(height < 740px) and (width < 600px)').matches; }
   private pileY() {
     const layout=this.layout; let y=layout.height-34;
@@ -178,7 +179,7 @@ export class TableScene {
     }
     return y;
   }
-  private get layout() { return tableLayout(this.mobile, this.state?.hands.length || 1, this.cardScale, this.state?.bank || 0, this.compact); }
+  private get layout() { return tableLayout(this.mobile, this.state?.hands.length || 1, this.cardScale, this.state?.bank || 0, this.compact, this.desktopWeb); }
   private resize() {
     const w = this.host.clientWidth, h = this.host.clientHeight;
     this.app.renderer.resize(w, h); this.background.width = w; this.background.height = h;
@@ -189,6 +190,14 @@ export class TableScene {
     const playHeight = this.mobile ? h : Math.max(300, h - 80);
     const scale = this.mobile ? Math.min(w / vw,1.15) : Math.min(w / vw, playHeight / vh);
     this.world.scale.set(scale); this.world.position.set((w - vw * scale) / 2, this.mobile ? 0 : (playHeight - vh * scale) / 2);
+    if (this.desktopWeb) {
+      const speech = dealerSpeechLayout(w, this.world.x, scale, layout);
+      layout.portraitX = speech.portraitX;
+      const board = this.host.closest<HTMLElement>('.board')!;
+      board.style.setProperty('--dealer-speech-left', `${speech.left}px`);
+      board.style.setProperty('--dealer-speech-top', `${this.world.y + (layout.portraitY - 90) * scale}px`);
+      board.style.setProperty('--dealer-speech-width', `${speech.width}px`);
+    }
     drawTableOrnament(this.tableOrnament, layout, this.mobile, {right:(w-this.world.x)/scale,top:-this.world.y/scale});
     this.dealer.position.set(layout.portraitX, layout.portraitY);
     for (const face of this.dealerFaces) { face.position.copyFrom(this.dealer.position); face.width = face.height = layout.portraitSize; }
@@ -198,7 +207,7 @@ export class TableScene {
     this.shoeSprite.width=this.mobile?this.compact?64:76:150;this.shoeSprite.height=this.shoeSprite.width*716/512;
     this.shoeLayers.forEach((card,i)=>{card.width=this.shoeSprite.width;card.height=this.shoeSprite.height;card.position.set(this.shoeSprite.x+(4-i)*1.2,this.shoeSprite.y+(4-i)*2.3);});
     this.playerPile.position.set(this.mobile ? 190 : vw/2,this.pileY());
-    for(const chip of this.pileChips){chip.sprite.width=this.mobile?25:40;chip.sprite.height=chip.sprite.width*.88;}
+    for(const chip of this.pileChips){chip.sprite.width=this.mobile?25:this.desktopWeb?56:40;chip.sprite.height=chip.sprite.width*.88;}
     if (this.state) this.render(this.state, true);
   }
   render(state: GameState, immediate = false) {
@@ -221,7 +230,7 @@ export class TableScene {
       const key=`${layer.heap}:${layer.x.toFixed(2)}:${layer.y.toFixed(2)}`;
       if(layer.layer===0&&!shadows.has(key)){
         shadows.add(key);
-        this.pileShadow.ellipse(layer.x*(layer.heap===0&&!mobile?700:breadth),layer.y*depth+5,mobile?15:24,mobile?11:17)
+        this.pileShadow.ellipse(layer.x*(layer.heap===0&&!mobile?700:breadth),layer.y*depth+5,mobile?15:this.desktopWeb?32:24,mobile?11:this.desktopWeb?23:17)
           .fill({color:0x000c07,alpha:.25});
       }
     }
@@ -261,7 +270,7 @@ export class TableScene {
       addLabel(value, x, y + 10, color, (mobile ? 30 : value.length > 3 ? 32 : 40) * fontScale);
     };
     const hand = (list: Card[], center: number, y: number, width: number, hideHole: boolean, active: boolean, inspectable = false) => {
-      const step = Math.min(cw * .65, (width - cw) / Math.max(1, list.length - 1));
+      const step = Math.min(cw * (this.desktopWeb ? .72 : .65), (width - cw) / Math.max(1, list.length - 1));
       if (active && list.length) this.decor.roundRect(center - Math.max(cw, step * (list.length - 1) + cw) / 2 - 12, y + ch / 2 + 14, Math.max(cw, step * (list.length - 1) + cw) + 24, 3, 1).fill({ color: 0xbba572, alpha: .75 });
       list.forEach((card, i) => {
         keep.add(card.id);
@@ -283,14 +292,15 @@ export class TableScene {
       });
     };
     const dealerY = layout.dealerY;
-    hand(state.dealer, mobile ? 144 : vw / 2, dealerY, mobile ? layout.handWidth : vw * .62, !state.reveal, false);
+    hand(state.dealer, mobile ? 144 : vw / 2, dealerY, mobile ? layout.handWidth : vw * (this.desktopWeb ? .72 : .62), !state.reveal, false);
     if (state.dealer.length) {
       const visible = state.reveal ? state.dealer : state.dealer.slice(0, 1);
       addScore('ДИЛЕР', `${total(visible).value}${state.reveal ? '' : ' + ?'}`, mobile ? 144 : vw / 2, dealerY - ch / 2 - layout.scoreOffset);
     }
     state.hands.forEach((h, i) => {
-      const center = layout.playerX(i), y = layout.playerY(i);
-      hand(h.cards, center, y, mobile ? layout.handWidth : vw / groups - 70, false, state.phase === 'player' && state.active === i, true);
+      const region = this.desktopWeb && groups > 1 ? webHandRegion(this.host.clientWidth, this.world.x, this.world.scale.x, vw) : {left:0,width:vw};
+      const center = this.desktopWeb ? region.left + region.width * (i + .5) / groups : layout.playerX(i), y = layout.playerY(i);
+      hand(h.cards, center, y, mobile ? layout.handWidth : (this.desktopWeb ? region.width / groups - 30 : vw / groups - 70), false, state.phase === 'player' && state.active === i, true);
       const value = total(h.cards);
       let word = h.outcome ? ({win:'ПОБЕДА',lose:'ПРОИГРЫШ',push:'ВОЗВРАТ',blackjack:'БЛЭКДЖЕК'}[h.outcome]) : value.value > 21 ? 'ПЕРЕБОР' : value.soft ? 'МЯГКАЯ' : groups > 1 ? `РУКА ${i + 1}` : 'ВАША РУКА';
       if (mobile && groups > 1 && h.outcome) word += ` · ${i + 1}`;
