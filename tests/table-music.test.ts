@@ -49,4 +49,16 @@ describe('table soundtrack', () => {
     music.setEnabled(true);
     await vi.waitFor(() => expect(audio.play).toHaveBeenCalledTimes(2));
   });
+  it('resumes after a quick background/foreground change during pending playback', async () => {
+    const {music, audio} = setup();
+    let reject!: (reason: Error) => void;
+    audio.play.mockImplementationOnce(() => new Promise<void>((_, fail) => { reject = fail; }));
+    music.setEnabled(true);
+    music.setEnabled(false);
+    music.setEnabled(true);
+    reject(new Error('play interrupted by pause'));
+    await vi.waitFor(() => expect(audio.play).toHaveBeenCalledTimes(2));
+    expect(audio.paused).toBe(false);
+  });
+
 });

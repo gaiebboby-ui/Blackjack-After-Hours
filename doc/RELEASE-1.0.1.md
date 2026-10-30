@@ -19,6 +19,6 @@
 
 ## Validation
 
-77 TypeScript tests, 4 artwork export tests and 3 Android instrumentation tests passed locally. Chrome checks covered corrupted save recovery, gameplay, 900-second music playback, looping, volume, background pause/resume and license downloads. The complete Android test run passed with network connectivity disabled.
+78 TypeScript tests, 4 artwork export tests and 3 Android instrumentation tests passed locally. Chrome checks covered corrupted save recovery, gameplay, 900-second music playback, looping, volume, background pause/resume and license downloads. The complete Android test run passed with network connectivity disabled.
 
 GitHub Pages remains a placeholder. The source repository stays private; account plan restrictions on Pages and branch protection are documented in doc/GITHUB_PAGES.md.

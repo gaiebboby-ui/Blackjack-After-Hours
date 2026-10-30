@@ -5,6 +5,7 @@ export class TableMusic {
   private audio?: HTMLAudioElement;
   private enabled = false;
   private pending?: Promise<void>;
+  private resumeRequested = false;
   private volume = .65;
 
   constructor(private readonly base: string) {}
@@ -16,14 +17,22 @@ export class TableMusic {
 
   setEnabled(enabled: boolean) {
     this.enabled = enabled;
-    if (!enabled) { this.audio?.pause(); return; }
+    if (!enabled) { this.resumeRequested = false; this.audio?.pause(); return; }
     const audio = this.audio ??= this.createAudio();
-    if (!audio.paused || this.pending) return;
+    if (this.pending) { this.resumeRequested = true; return; }
+    if (!audio.paused) return;
+    this.resumeRequested = false;
     this.pending = audio.play().then(() => {
       if (!this.enabled) audio.pause();
     }).catch(() => {
       // Autoplay denial and interrupted loads can be retried on the next gesture.
-    }).finally(() => { this.pending = undefined; });
+    }).finally(() => {
+      this.pending = undefined;
+      if (this.enabled && this.resumeRequested) {
+        this.resumeRequested = false;
+        this.setEnabled(true);
+      }
+    });
   }
 
   private createAudio() {
